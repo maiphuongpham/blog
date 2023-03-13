@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Mai Pham</title>
+    <link>/</link>
+    <description>Recent content on Mai Pham</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 21 Feb 2023 15:54:07 -0800</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Self Introduction</title>
+      <link>/posts/first/</link>
+      <pubDate>Tue, 21 Feb 2023 15:54:07 -0800</pubDate>
+      
+      <guid>/posts/first/</guid>
+      <description>Self Introduction I am Mai Pham. I come from Vietnam and I lived there for 22 years. I have a bachelor&amp;rsquo;s degree in International Business Management and some industry experience in banking and accounting, both in Vietnam and the US, before I went to Columbia to pursue my dream, to learn and leverage an analytical and technological approach in various management problems, which is why I&amp;rsquo;m here, as a first-year Master&amp;rsquo;s student in Operations Research.</description>
+    </item>
+    
+  </channel>
+</rss>
