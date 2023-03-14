@@ -2,7 +2,10 @@
 title: "Self Introduction"
 date: 2023-02-21T15:54:07-08:00
 draft: false
+math: true
 ---
+
+$12^2$
 
 ## Self Introduction
 I am Mai Pham. I come from Vietnam and I lived there for 22 years. I have a bachelor's degree in International Business Management and some industry experience in banking and accounting, both in Vietnam and the US, before I went to Columbia to pursue my dream, to learn and leverage an analytical and technological approach in various management problems, which is why I'm here, as a first-year Master's student in Operations Research.
