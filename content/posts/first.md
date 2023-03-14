@@ -2,7 +2,6 @@
 title: "Self Introduction"
 date: 2023-02-21T15:54:07-08:00
 draft: false
-math: true
 ---
 
 $12^2$
