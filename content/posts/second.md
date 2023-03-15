@@ -31,17 +31,17 @@ Note that the factor $k/m$ in the numerator of the formula for $D$ is time, meas
 lambda$ irrespective of its coupon rate."
 
 Corollary: "The duration of a coupon-bearing bond approaches the limit $(1+ \lambda/m) / 
-lambda$ as the bond's maturity is lengthened to infinity."
+\lambda$ as the bond's maturity is lengthened to infinity."
 
 #### Theorem 4
 "The duration of a coupon-bearing bond selling at par or above par increases monotonically with its term to maturity and approaches $(1+ \lambda/m) / 
-lambda$ as the term to maturity goes to infinity."
+\lambda$ as the term to maturity goes to infinity."
 
 (proved by partial derivative of $D$ with respect to $n$)
 
 #### Theorem 5
 "The duration of a coupon-bearing bond selling below par reaches a maximum before maturity reaches infinity and then recedes toward the limit $(1+ \lambda/m) / 
-lambda$
+\lambda$
 
 #### Theorem 6
 "The duration of a coupon-bearing bond selling below par reaches its maximum at a maturity directly related to the bond's coupon rate and inversely related to the market yield."
@@ -93,9 +93,7 @@ $D_{M} \approx \frac{V_{_} - V_{+}}{2\times V_{0} \times \Delta \lambda}$
 
 ### Effective Duration
 
-effective duration = $\frac{V_{_} - V_{+}}{2\times V_{0} \times \Delta \curve}$
-
-which uses Taylor series expansion of the price as a function of interest rate:
+Taylor series expansion of the price as a function of interest rate:
 
 $$P(i+\Delta i) = P(i) + \frac{dP}{di}\Delta i + \frac{1}{2}\frac{d^{2}P}{di^{2}}(\Delta i)^{2} + \ldots$$
 
@@ -126,8 +124,19 @@ Key rate duration is useful for measuring the effect of a nonparallel shift in t
 money duration $=$ annual modified duration $\times$ full price of bond position
 
 ### Convexity
+Using the Taylor series expansion and ignoring terms in powers of $(\Delta i)^{3}$ and higher yields
 
-$C \approx \frac{V_{_} + V_{+} - 2V_{0}}{(\Delta \lambda)^{2}V_{0}}$
+$$P(i+\Delta i) - P(i) \approx \frac{dP}{di}\Delta i + \frac{1}{2}\frac{d^{2}P}{di^{2}}(\Delta i)^{2}$$
+
+$$P(i-\Delta i) - P(i) \approx \frac{dP}{di}(-\Delta i) + \frac{1}{2}\frac{d^{2}P}{di^{2}}(-\Delta i)^{2}$$
+
+which are summed to give the following approximation to
+
+$$\frac{d^{2}P}{di^{2}}(\Delta i)^{2} \approx P(i-\Delta i) - 2P(i) + P(i+\Delta i)$$.
+
+It follows that
+
+$$C = \frac{d^{2}}{di^{2}}\frac{1}{P} \approx \frac{P(i-\Delta i) - 2P(i) + P(i+\Delta i)}{P(i)(\Delta i)^2}$$
 
 $C_{E} \approx = \frac{V_{_} + V_{+} - 2V_{0}}{(\Delta curve)^{2}V_{0}}$
 
