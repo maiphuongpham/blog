@@ -89,7 +89,7 @@ where $w_{i} = P_{i} / P, i = 1,2,\ldots,m$.
 
 #### Approximate Modified Duration
 
-approximate modified duration = $\frac{V_{_} - V_{+}}{2\times V_{0} \times \Delta \lambda}$
+$D_{M} \approx \frac{V_{_} - V_{+}}{2\times V_{0} \times \Delta \lambda}$
 
 ### Effective Duration
 
@@ -127,10 +127,10 @@ money duration $=$ annual modified duration $\times$ full price of bond position
 
 ### Convexity
 
-approximate convexity $= \frac{V_{_} + V_{+} - 2V_{0}}{(\Delta \lambda)^{2}V_{0}}$
+$C \approx \frac{V_{_} + V_{+} - 2V_{0}}{(\Delta \lambda)^{2}V_{0}}$
 
-approximate effective convexity = $= \frac{V_{_} + V_{+} - 2V_{0}}{(\Delta curve)^{2}V_{0}}$
+$C_{E} \approx = \frac{V_{_} + V_{+} - 2V_{0}}{(\Delta curve)^{2}V_{0}}$
 
 ### Change in full bond price
 
-change in full bond price $= -\text{annual modified duration}(\Delta \lambda) + 1/2 \text{annual convexity}(\Delta \lambda)^{2}$
+$\Delta P = -D_{M}(\Delta \lambda) + 1/2 C(\Delta \lambda)^{2}$
