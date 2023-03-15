@@ -5,7 +5,6 @@ draft: false
 math: true
 ---
 
-## Duration
 Duration the measure of a bond's interest rate risk or sensitivity of a bond's full price to a change in its yield.
 ### Macaulay Duration
 Introduced by Frederick Macaulay (1938), is the weighted average number of years until each of the bond's promised cash flow is to be paid, where the weights are the present values of each cash flow as a percentage of the bond's full value.
@@ -27,21 +26,17 @@ Note that the factor $k/m$ in the numerator of the formula for $D$ is time, meas
 " The duration of a coupon-bearing bond with a finite maturity of more than one period $(1 < n < \infty)$ has a duration which is shorter than its term to maturity."
 
 #### Theorem 3
-"The duration of a perpetual bond $(n = \infty)$ is equal to $(1+ \lambda/m) / 
-lambda$ irrespective of its coupon rate."
+"The duration of a perpetual bond $(n = \infty)$ is equal to $(1+ \lambda/m) / \lambda$ irrespective of its coupon rate."
 
-Corollary: "The duration of a coupon-bearing bond approaches the limit $(1+ \lambda/m) / 
-\lambda$ as the bond's maturity is lengthened to infinity."
+Corollary: "The duration of a coupon-bearing bond approaches the limit $(1+ \lambda/m) / \lambda$ as the bond's maturity is lengthened to infinity."
 
 #### Theorem 4
-"The duration of a coupon-bearing bond selling at par or above par increases monotonically with its term to maturity and approaches $(1+ \lambda/m) / 
-\lambda$ as the term to maturity goes to infinity."
+"The duration of a coupon-bearing bond selling at par or above par increases monotonically with its term to maturity and approaches $(1+ \lambda/m) / \lambda$ as the term to maturity goes to infinity."
 
 (proved by partial derivative of $D$ with respect to $n$)
 
 #### Theorem 5
-"The duration of a coupon-bearing bond selling below par reaches a maximum before maturity reaches infinity and then recedes toward the limit $(1+ \lambda/m) / 
-\lambda$
+"The duration of a coupon-bearing bond selling below par reaches a maximum before maturity reaches infinity and then recedes toward the limit $(1+ \lambda/m) / \lambda$
 
 #### Theorem 6
 "The duration of a coupon-bearing bond selling below par reaches its maximum at a maturity directly related to the bond's coupon rate and inversely related to the market yield."
@@ -89,7 +84,7 @@ where $w_{i} = P_{i} / P, i = 1,2,\ldots,m$.
 
 #### Approximate Modified Duration
 
-$D_{M} \approx \frac{V_{_} - V_{+}}{2\times V_{0} \times \Delta \lambda}$
+$D_{M} \approx \frac{V_{-} - V_{+}}{2\times V_{0} \times \Delta \lambda}$
 
 ### Effective Duration
 
@@ -138,7 +133,7 @@ It follows that
 
 $$C = \frac{d^{2}}{di^{2}}\frac{1}{P} \approx \frac{P(i-\Delta i) - 2P(i) + P(i+\Delta i)}{P(i)(\Delta i)^2}$$
 
-$C_{E} \approx = \frac{V_{_} + V_{+} - 2V_{0}}{(\Delta curve)^{2}V_{0}}$
+$C_{E} \approx = \frac{V_{-} + V_{+} - 2V_{0}}{(\Delta curve)^{2}V_{0}}$
 
 ### Change in full bond price
 
