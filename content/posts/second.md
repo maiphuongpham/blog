@@ -84,7 +84,7 @@ where $w_{i} = P_{i} / P, i = 1,2,\ldots,m$.
 
 #### Approximate Modified Duration
 
-$D_{M} \approx \frac{V_{-} - V_{+}}{2\times V_{0} \times \Delta \lambda}$
+$$D_{M} \approx \frac{V_{-} - V_{+}}{2\times V_{0} \times \Delta \lambda}$$
 
 ### Effective Duration
 
@@ -116,7 +116,7 @@ Key rate duration is useful for measuring the effect of a nonparallel shift in t
 
 ### Money Duration
 
-money duration $=$ annual modified duration $\times$ full price of bond position
+$$\text{money duration} = D_{M} P$$
 
 ### Convexity
 Using the Taylor series expansion and ignoring terms in powers of $(\Delta i)^{3}$ and higher yields
