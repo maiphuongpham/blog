@@ -56,11 +56,6 @@ Corollary: "The duration of a coupon-bearing bond approaches the limit $(1+ \lam
 #### Theorem 11
 "A bond's duration approaches unity as the bond's yield approaches infinity."
 
-#### Reference
-Hawawini, G. (2017). Bond Duration and Immunization. Routledge.
-‌
-Luenberger, D. G. (2014). Investment science. New York, Ny [U.A.] Oxford Univ. Press C.
-‌
 ### Modified Duration
 Modified Duration is found by taking the first derivative of $P$ with respect to $\lambda$:
 
@@ -139,4 +134,15 @@ $$C_{E} \approx = \frac{V_{-} + V_{+} - 2V_{0}}{(\Delta curve)^{2}V_{0}}$$
 
 ### Change in full bond price
 
-$\Delta P = -D_{M}(\Delta \lambda) + 1/2 C(\Delta \lambda)^{2}$
+$$\Delta P = -D_{M}(\Delta \lambda) + 1/2 C(\Delta \lambda)^{2}$$
+
+### Reference
+Hawawini, G. (2017). Bond Duration and Immunization. Routledge.
+
+Ho, T. S. Y. (1992). Key Rate Durations. The Journal of Fixed Income, 2(2), 29–44. https://doi.org/10.3905/jfi.1992.408049
+‌
+Luenberger, D. G. (2014). Investment science. New York, Ny [U.A.] Oxford Univ. Press C.
+
+
+‌
+‌
