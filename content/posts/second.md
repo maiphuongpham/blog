@@ -84,10 +84,6 @@ where $w_{i} = P_{i} / P, i = 1,2,\ldots,m$.
 
 #### Approximate Modified Duration
 
-$$D_{M} \approx \frac{V_{-} - V_{+}}{2\times V_{0} \times \Delta \lambda}$$
-
-### Effective Duration
-
 Taylor series expansion of the price as a function of interest rate:
 
 $$P(i+\Delta i) = P(i) + \frac{dP}{di}\Delta i + \frac{1}{2}\frac{d^{2}P}{di^{2}}(\Delta i)^{2} + \ldots$$
@@ -102,7 +98,11 @@ $$-\frac{dP}{di}\frac{1}{P} \approx \frac{P(i - \Delta i) - P(i)}{(\Delta i)P(i)
 
 Averaging the right side of the last two equations yields
 
-$$D_{E}(P) \approx \frac{P(i - \Delta i) - P(i + \Delta i)}{2P(i)(\Delta i)}$$
+$$D_{M}(P) \approx \frac{P(i - \Delta i) - P(i + \Delta i)}{2P(i)(\Delta i)}$$
+
+#### Effective Duration
+
+$$D_{E} \approx \frac{V_{-} - V_{+}}{2\times V_{0} \times \Delta \text{curve}}$$
 
 ### Key Rate Duration
 
@@ -133,7 +133,9 @@ It follows that
 
 $$C = \frac{d^{2}}{di^{2}}\frac{1}{P} \approx \frac{P(i-\Delta i) - 2P(i) + P(i+\Delta i)}{P(i)(\Delta i)^2}$$
 
-$C_{E} \approx = \frac{V_{-} + V_{+} - 2V_{0}}{(\Delta curve)^{2}V_{0}}$
+#### Effective Convexity
+
+$$C_{E} \approx = \frac{V_{-} + V_{+} - 2V_{0}}{(\Delta curve)^{2}V_{0}}$$
 
 ### Change in full bond price
 
