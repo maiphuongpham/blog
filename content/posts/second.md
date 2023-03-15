@@ -82,7 +82,7 @@ $$D = w_{1}D_{1} + w_{2}D_{2} + \ldots + w_{m}D_{m}$$
 
 where $w_{i} = P_{i} / P, i = 1,2,\ldots,m$.
 
-#### Approximate Modified Duration
+### Approximate Modified Duration
 
 Taylor series expansion of the price as a function of interest rate:
 
@@ -100,7 +100,7 @@ Averaging the right side of the last two equations yields
 
 $$D_{M}(P) \approx \frac{P(i - \Delta i) - P(i + \Delta i)}{2P(i)(\Delta i)}$$
 
-#### Effective Duration
+### Effective Duration
 
 $$D_{E} \approx \frac{V_{-} - V_{+}}{2\times V_{0} \times \Delta \text{curve}}$$
 
@@ -133,7 +133,7 @@ It follows that
 
 $$C = \frac{d^{2}}{di^{2}}\frac{1}{P} \approx \frac{P(i-\Delta i) - 2P(i) + P(i+\Delta i)}{P(i)(\Delta i)^2}$$
 
-#### Effective Convexity
+### Effective Convexity
 
 $$C_{E} \approx = \frac{V_{-} + V_{+} - 2V_{0}}{(\Delta curve)^{2}V_{0}}$$
 
