@@ -9,7 +9,7 @@ Duration the measure of a bond's interest rate risk or sensitivity of a bond's f
 ### Macaulay Duration
 Introduced by Frederick Macaulay (1938), is the weighted average number of years until each of the bond's promised cash flow is to be paid, where the weights are the present values of each cash flow as a percentage of the bond's full value.
 
-In particular, Macaulay Duration $D$ is defined as
+Macaulay Duration $D$ is defined as
 
 $$ D = \frac{\sum_{k=1}^{n} (k/m)c_{k} / [1 + (\lambda/m)]^{k}}{\text{PV}} $$
 
@@ -32,8 +32,6 @@ Corollary: "The duration of a coupon-bearing bond approaches the limit $(1+ \lam
 
 #### Theorem 4
 "The duration of a coupon-bearing bond selling at par or above par increases monotonically with its term to maturity and approaches $(1+ \lambda/m) / \lambda$ as the term to maturity goes to infinity."
-
-(proved by partial derivative of $D$ with respect to $n$)
 
 #### Theorem 5
 "The duration of a coupon-bearing bond selling below par reaches a maximum before maturity reaches infinity and then recedes toward the limit $(1+ \lambda/m) / \lambda$
@@ -130,7 +128,7 @@ $$C = \frac{d^{2}}{di^{2}}\frac{1}{P} \approx \frac{P(i-\Delta i) - 2P(i) + P(i+
 
 ### Effective Convexity
 
-$$C_{E} \approx = \frac{V_{-} + V_{+} - 2V_{0}}{(\Delta curve)^{2}V_{0}}$$
+$$C_{E} \approx = \frac{V_{-} + V_{+} - 2V_{0}}{(\Delta \text{curve})^{2}V_{0}}$$
 
 ### Change in full bond price
 
