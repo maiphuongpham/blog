@@ -24,4 +24,5 @@ Special cases: Suppose $t = T$ (the option is at expiration), then
 $$d_{1} = d_{2} = 
 \begin{cases}
 +\infty \text{if} S > K\n
--\infty \text{if} S < K$$
+-\infty \text{if} S < K
+\end{cases}$$
