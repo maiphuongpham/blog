@@ -21,8 +21,14 @@ and where $N(x)$ denotes the standard cummulative normal probability distributio
 
 Special cases: Suppose $t = T$ (the option is at expiration), then
 
-$$d_{1} = d_{2} = 
-\begin{cases}
-+\infty &\text{if } S > K \\
--\infty &\text{if } S < K
+$$d_{1} = d_{2} = \begin{cases}
+    +\infty &\text{if } S > K \\
+    -\infty &\text{if } S < K
+\end{cases}$$
+
+Therefore, since $N(\infty) = 1$ and $N(-\infty) = 0$, we find
+
+$$C(S,T) = \begin{cases}
+    S - K &\text{if } S > K \\
+    0 &\text{if } S < K
 \end{cases}$$
