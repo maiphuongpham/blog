@@ -57,7 +57,7 @@ The gamma of a European option satisfies
 
 $$\text{gamma} = \frac{d^{2}C}{dS^{2}} = e^{-cT}\frac{\phi(d_{1})}{\sigma S \sqrt{T}} \in [0,\infty]$$
 
-where $\phi(\dot)$ is the standard normal PDF.
+where $\phi(\cdot)$ is the standard normal PDF.
 
 #### Vega
 
@@ -65,7 +65,7 @@ The vega of a European option satisfies
 
 $$\text{vega} = \frac{dC}{d\sigma} = e^{-cT} S \sqrt{T} \phi (d_{1})$$
 
-where $\phi(\dot)$ is the standard normal PDF.
+where $\phi(\cdot)$ is the standard normal PDF.
 
 #### Theta
 
@@ -77,7 +77,7 @@ The theta of a European put option satisfies
 
 $$\text{theta} = -\frac{dP}{dT} = -e^{-cT} S \phi (d_{1}) \frac{\sigma}{2 \sqrt{T}} - ce^{-cT} S N(-d_{1}) + rKe^{-rT}N(-d_{2})$$
 
-where $\phi(\dot)$ is the standard normal PDF.
+where $\phi(\cdot)$ is the standard normal PDF.
 
 #### Rho
 
