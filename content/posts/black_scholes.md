@@ -6,6 +6,7 @@ math: true
 ---
 
 ### The Black-Scholes Model
+
 {{< detail-tag "CLICK ME" >}}
 This text will be hidden
 
