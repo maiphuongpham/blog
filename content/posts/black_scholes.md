@@ -7,16 +7,6 @@ math: true
 
 ### The Black-Scholes Model
 
-{{%expand%}}
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-{{% /expand%}}
-
-
 #### Black and Scholes assumed:
 1. A continuously-compounded interest rate of $r$.
 2. Geometric Brownian motion dynamics for the stock price, $S_{t}$, so that
