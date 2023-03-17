@@ -87,5 +87,5 @@ which states the price for a European option of maturity $T$ on a futures contra
 
 {{<detail-tag "Why?">}}
 #### Margrabe's formula
-{{ /detail-tag>}}
+{{ <detail-tag>}}
 
