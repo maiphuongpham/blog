@@ -6,8 +6,15 @@ math: true
 ---
 
 ### The Black-Scholes Model
-{< detail-tag "This is an example" "Examples are good for learning things and trying something new" >}
-#### Black and Scholes assumed:
+{{< detail-tag "CLICK ME" >}}
+This text will be hidden
+
+#### yes, even hidden code blocks! (seems like bold title dont work here too)
+
+```python
+print("hello world!")
+```
+{{< /detail-tag >}}#### Black and Scholes assumed:
 1. A continuously-compounded interest rate of $r$.
 2. Geometric Brownian motion dynamics for the stock price, $S_{t}$, so that
 $$S_{t} = S_{0} e^{(\mu - \sigma^{2}/2)t + \sigma W_{t}}$$
