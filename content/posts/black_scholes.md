@@ -6,7 +6,7 @@ math: true
 ---
 
 ### The Black-Scholes Model
-
+{< detail-tag "This is an example" "Examples are good for learning things and trying something new" >}
 #### Black and Scholes assumed:
 1. A continuously-compounded interest rate of $r$.
 2. Geometric Brownian motion dynamics for the stock price, $S_{t}$, so that
