@@ -5,18 +5,6 @@ draft: false
 math: true
 ---
 
-### The Black-Scholes Model
-
-{{< detail-tag "CLICK ME" >}}
-This text will be hidden
-
-#### yes, even hidden code blocks! (seems like bold title dont work here too)
-
-```python
-print("hello world!")
-```
-{{< /detail-tag >}}
-
 #### Black and Scholes assumed:
 1. A continuously-compounded interest rate of $r$.
 2. Geometric Brownian motion dynamics for the stock price, $S_{t}$, so that
@@ -77,7 +65,7 @@ The theta of a European put option satisfies
 
 $$\text{theta} = -\frac{dP}{dT} = -e^{-cT} S \phi (d_{1}) \frac{\sigma}{2 \sqrt{T}} - ce^{-cT} S N(-d_{1}) + rKe^{-rT}N(-d_{2})$$
 
-where $\phi(\cdot)$ is the standard normal PDF.
+where $\phi(\dot)$ is the standard normal PDF.
 
 #### Rho
 
@@ -88,3 +76,16 @@ $$KTe^{-rT}N(d_{2})$$
 The rho of a European put option satisfies
 
 $$-KTe^{-rT}N(-d_{2})$$
+
+### The Black Model
+
+$$c = e^{-rT}[FN(d_{1}) - K N(d_{2})]$$
+
+$$p = e^{-rT}[FN(-d_{1}) - K N(-d_{2})]$$
+
+which states the price for a European option of maturity $T$ on a futures contract with strike price $K$ and delivery date $T'$ (with $T' > T$)
+
+{{<detail-tag "Why?">}}
+#### Margrabe's formula
+{{ /detail-tag>}}
+
