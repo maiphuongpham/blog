@@ -14,9 +14,9 @@ math: true
 
 ### Evaluating Model Fit
 
-#### $R^{2}$
+#### Coefficient of Determination $R^{2}$
 
-$$R^{2} = \frac{SSR}{SST} = \frac{ \sum(\hat{Y}_{i} - \bar{Y})^{2} }{ \sum(Y_{i} - \bar{Y})^{2} }$$
+$$R^{2} = \frac{SSR}{SST} = \frac{\sum(\hat{Y}_{i} - \bar{Y})^{2}}{\sum(Y_{i} - \bar{Y})^{2}}$$
 
 #### Adjusted $R^{2}$
 
