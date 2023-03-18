@@ -11,7 +11,7 @@ math: true
 
 (Dimention Reduction)
 
-$$\min \sun_{i=1}^{n} \epsilon_{i}^{2} + \lambda \sum_{i=1}^{k} |\hat{b_{k}}|$$
+$$\min \sum_{i=1}^{n} \epsilon_{i}^{2} + \lambda \sum_{i=1}^{k} |\hat{b_{k}}|$$
 
 where $|\hat{b_{k}}|$ is the number of included features.
 
