@@ -16,16 +16,16 @@ math: true
 
 #### $R^{2}$
 
-$$R^{2} = \frac{SSR}{SST} = \frac{\sum (\hat{Y}_{i} - \bar{Y})^{2}}{\frac{\sum (Y_{i} - \bar{Y})^{2}}$$
+$$R^{2} = \frac{SSR}{SST} = \frac{\sum (\hat{Y}_{i} - \bar{Y})^{2}}{\frac{\sum (Y_{i} - \bar{Y})^{2}}}$$
 
 #### Adjusted $R^{2}$
 
 Proposed by Mordecai Ezekiel, the adjusted $R^{2}$ is defined as
 
-$$\bar{R}^{2} = 1 - \frac{SSE/ (n-k-1)}{SST/(n-1)} = 1 - \left[ \left( \frac{n-1}{n-k-1} \right) (1 - R^{2}) right]$$
+$$\bar{R}^{2} = 1 - \frac{SSE/ (n-k-1)}{SST/(n-1)} = 1 - \left[ \left( \frac{n-1}{n-k-1} \right) (1 - R^{2}) \right]$$
 
 For $k \ge 1, \bar{R}^{2} < R^{2}$
-if coefficient's $|t - \text{stat}| > 1, \bar{R}^{2} \uparrow, \text{else} \bar{R}^{2} \downarrow$
+if coefficient's $|t - \text{stat}| > 1, \bar{R}^{2} \uparrow, \text{else } \bar{R}^{2} \downarrow$
 
 #### AIC and BIC
 
@@ -46,12 +46,12 @@ t-stat vs critical value
 
 Testing joint coefficients
 
-$$F-stat = \frac{(SSE_{\text{restricted}} - SSE_{\text{unrestricted}})/q}{SE_{\text{unrestricted}} / (n-k-1)}$$
+$$F = \frac{(SSE_{\text{restricted}} - SSE_{\text{unrestricted}})/q}{SE_{\text{unrestricted}} / (n-k-1)}$$
 
 with $q$ being the number of restrictions
 
 Testing unrestricted model
-$$F-stat = \frac{\text{Explained variance}}{\text{Unexplained variance}} = \frac{MSR}{SSR} = \frac{SSR/k}{SSE/(n-k-1)}$$
+$$F = \frac{\text{Explained variance}}{\text{Unexplained variance}} = \frac{MSR}{SSR} = \frac{SSR/k}{SSE/(n-k-1)}$$
 
 ### Model Mispecification
 
@@ -83,9 +83,12 @@ Correct: SC-consistent SEs, Newey-West SEs (will also correct for CH)
 
 Inflates SEs and insignificant t-stats but possible significant F-stat
 
-Test: VIF (Variance Inflation Factor) $VIF_{X_{1}} = \frac{1}{1 - R_{X_{1}}^{2}$
+Test: VIF (Variance Inflation Factor) $VIF_{X_{1}} = \frac{1}{1 - R_{X_{1}}}^{2}$
+
 min = 1 when $R_{X_{1}}^{2} = 0$
+
 $>5$ becoming concerning
+
 $>10$ indicates MC
 
 Correct: 
@@ -159,9 +162,9 @@ Note: $\epsilon_{t}$ must be uncorrelated accoress time periods (use Durbin-Wats
 
 #### Autoregressive Time-Series Model
 
-$$AR(1) & x_{t} = b_{0} + b_{1} x_{t-1} + \epsilon_{t}$$
+$$AR(1) x_{t} = b_{0} + b_{1} x_{t-1} + \epsilon_{t}$$
 
-$$AR(p) & x_{t} = b_{0} + b_{1} x_{t-1} + b_{2} x_{t-2} + \ldots + b_{p} x_{t-p} + \epsilon_{t}$$ 
+$$AR(p) x_{t} = b_{0} + b_{1} x_{t-1} + b_{2} x_{t-2} + \ldots + b_{p} x_{t-p} + \epsilon_{t}$$ 
 
 Covariance Stationary Series: mean, var, cov($y_{t}, y_{t-s}$) constant and finite in all periods, otherwise estimate of $b_{1}$ will be biased.
 
@@ -169,7 +172,7 @@ Cannot use DW statistics to test Serial Correlation, instead
 
 1. Estimate an AR model (e.g. AR(1))
 2. Compute $\rho_{\epsilon \epsilon_{t-k}}$ (e.g. AR(2))
-3. Test $H_{0}: \rho_{\epsilon \epsilon_{t-k}) = 0$ (reject $H_{0}$ implies a misspecified model)
+3. Test $H_{0}: \rho_{\epsilon \epsilon_{t-k}} = 0$ (reject $H_{0}$ implies a misspecified model)
 
 ##### Mean Reversion
 
