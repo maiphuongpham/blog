@@ -29,3 +29,38 @@ Under UIRP, country with higher interst rate is expected to see the value of its
 If UIRP held, no excess return could be gained by going long a high-yielding currency or short a low-yielding one, no incentive to shift capital from one currency to another.
 
 Empirical studies showed UIRP failed to hold over short and medium terms. Interest rate diffentials are generally a poor predictor of future Fx rate changes; high-yield currencies tend to strengthen, not weaken; forward Fx rates are a poor predictor of future spot Fx rates; current spot Fx rates are also poor predictors of future spot Fx rates.
+
+# Purchasing Power Parity
+
+## (Absolute) Purchasing Power Parity
+
+Purchasing power parity (PPP) compares the average price of a representative basket of consumption goods between countries. PPP is based on 'law of one price' (identical goods should trade at the same price across countries when valued in terms of a common currency)
+
+$$S_{f/d} = \frac{\text{CPI}_{f}}{\text{CPI}_{d}}$$
+
+Recall: $\text{CPI} = \frac{\text{market basket of desired year}}{\text{market basket of base year}} \times 100$
+
+In practice, even if the law of one price held for every good in two economies, absolute PPP might not hold because the weights (consumption patterns) of goods are different.
+
+## Relative Purchasing Power Parity
+
+Relative purchasing power parity (relative PPP) states that changes in Fx rates should exactly offset the price effects of any inflation differential between two countries.
+
+$$\% \Delta S_{f/d} = \pi_{f} - \pi_{d}$$
+
+## Ex-ante PPP
+
+$$\% \Delta S_{f/d}^{e} = \pi_{f}^{e} - \pi_{f}^{e}$$
+
+# The Fisher effect and Real Interest Rate Parity
+
+When both UIRP and (ex-ante) PPP hold, the two conditions together reveal a relationship among expected real interest rates, which is known as real interest rate parity (RIRP) and is related to the international Fisher effect.
+
+$$\text{UIRP}: E(\% \Delta S_{t+k}) = i_{f} - i_{d}$$
+
+$$\text{Ex-ante PPP}: E(\% \Delta S_{t+k}) = \pi_{f}^{e} - \pi_{d}^{e}$$
+
+$$\text{RIRP}: i_{f} - i_{d} = \pi_{f}^{e} - \pi_{d}^{e}$$
+
+Note: 
+Since $i = r + \pi^{e}$, RIRP implies real yield spread $(r_{f} - r_{d}) = 0$
