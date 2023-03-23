@@ -64,3 +64,4 @@ $$\text{RIRP}: i_{f} - i_{d} = \pi_{f}^{e} - \pi_{d}^{e}$$
 
 Note: 
 Since $i = r + \pi^{e}$, RIRP implies real yield spread $(r_{f} - r_{d}) = 0$
+d
