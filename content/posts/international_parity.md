@@ -22,7 +22,7 @@ $$ F = \frac{1 + i_{f}}{1 + i_{d}} S_{0} $$
 ## Uncovered Interest Rate Parity
 Uncovered interest rate parity (UIRP) states that expected return on an uncovered (unhedged) foreign currency investment should equal the return on a comparable domestic currency investment. The following equation represents uncovered interest rate parity (given f/d quote structure):
 
-$$ E(\% \Delta S) = i_{f} - i_{d}$$
+$$ E(\Delta S  / S_{t}) = i_{f} - i_{d}$$
 
 Under UIRP, country with higher interst rate is expected to see the value of its currency depreciate.
 
@@ -56,9 +56,9 @@ $$\% \Delta S_{f/d}^{e} = \pi_{f}^{e} - \pi_{f}^{e}$$
 
 When both UIRP and (ex-ante) PPP hold, the two conditions together reveal a relationship among expected real interest rates, which is known as real interest rate parity (RIRP) and is related to the international Fisher effect.
 
-$$\text{UIRP}: E( \% \Delta S_{t+k}) = i_{f} - i_{d}$$
+$$\text{UIRP}: E( \Delta S_{t+k} / S_{t}) = i_{f} - i_{d}$$
 
-$$\text{Ex-ante PPP}: E( \% \Delta S_{t+k}) = \pi_{f}^{e} - \pi_{d}^{e}$$
+$$\text{Ex-ante PPP}: E(\Delta S_{t+k} / S_{t}) = \pi_{f}^{e} - \pi_{d}^{e}$$
 
 $$\text{RIRP}: i_{f} - i_{d} = \pi_{f}^{e} - \pi_{d}^{e}$$
 
