@@ -56,9 +56,9 @@ $$\% \Delta S_{f/d}^{e} = \pi_{f}^{e} - \pi_{f}^{e}$$
 
 When both UIRP and (ex-ante) PPP hold, the two conditions together reveal a relationship among expected real interest rates, which is known as real interest rate parity (RIRP) and is related to the international Fisher effect.
 
-$$\text{UIRP}: E(\% \Delta S_{t+k}) = i_{f} - i_{d}$$
+$$\text{UIRP}: E( \% \Delta S_{t+k}) = i_{f} - i_{d}$$
 
-$$\text{Ex-ante PPP}: E(\% \Delta S_{t+k}) = \pi_{f}^{e} - \pi_{d}^{e}$$
+$$\text{Ex-ante PPP}: E( \% \Delta S_{t+k}) = \pi_{f}^{e} - \pi_{d}^{e}$$
 
 $$\text{RIRP}: i_{f} - i_{d} = \pi_{f}^{e} - \pi_{d}^{e}$$
 
