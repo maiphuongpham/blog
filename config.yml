@@ -1,4 +1,15 @@
-baseURL: "https://whimsical-lily-7e3e04.netlify.app"
+baseURL: "https://maipham.netlify.app"
 languageCode: en-us
 title: Mai Pham
 theme: PaperMod
+
+params:
+    homeInfoParams:
+        Title: Hi there wave
+        Content: Can be Info, links, about...
+
+    socialIcons: # optional
+        - name: "<platform>"
+            url: "<link>"
+        - name: "<platform 2>"
+            url: "<link2>"
