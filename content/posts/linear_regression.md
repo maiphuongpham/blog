@@ -46,7 +46,7 @@ t-stat vs critical value
 
 Testing joint coefficients
 
-$$F = \frac{(SSE_{\text{restricted}} - SSE_{\text{unrestricted}})/q}{SE_{\text{unrestricted}} / (n-k-1)}$$
+$$F = \frac{(SSE_{\text{restricted}} - SSE_{\text{unrestricted}})/q}{SSE_{\text{unrestricted}} / (n-k-1)}$$
 
 with $q$ being the number of restrictions
 

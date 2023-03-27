@@ -64,3 +64,10 @@ $$\text{RIRP}: i_{f} - i_{d} = \pi_{f}^{e} - \pi_{d}^{e}$$
 
 Note: 
 Since $i = r + \pi^{e}$, RIRP implies real yield spread $(r_{f} - r_{d}) = 0$
+
+IMF Consultative Group on Exchange Rate Issues
+1. Macroeconomic balance approach: estimates how much Fx rates need to adjust in order to close the gap between the medium-term expectation for a country's current account imbalance and that country's normal (or sustainable) current account imbalance (focus on 'real' flows - current account)
+
+2. External sustainability approach: focuses on stocks of outstanding assets or debt, how much Fx rates need to adjust to ensure that a country's net foreign asset/GDP ratio or net foreign liability/GDP ratio stabilizes at some benchmark level (focus on 'financial' flows - capital account)
+
+3. A reduced form econometric model: seeks to estimate the equilibrium path that a currency should take on the basis of the trends in several key macro variables.
