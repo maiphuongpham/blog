@@ -71,3 +71,10 @@ IMF Consultative Group on Exchange Rate Issues
 2. External sustainability approach: focuses on stocks of outstanding assets or debt, how much Fx rates need to adjust to ensure that a country's net foreign asset/GDP ratio or net foreign liability/GDP ratio stabilizes at some benchmark level (focus on 'financial' flows - capital account)
 
 3. A reduced form econometric model: seeks to estimate the equilibrium path that a currency should take on the basis of the trends in several key macro variables.
+
+Relationship between PPP currency values and current account states;
+
+1. overvalued currency, trade surplus (X > M): unclear
+2. overvalued currency, trade deficit (X < M): encourage depreciation
+3. undervalued currency, trade surplus (X > M): encourage appreciation
+4. undervalued currency, trade deficit (X < M): unclear
