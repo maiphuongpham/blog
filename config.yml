@@ -3,8 +3,6 @@ languageCode: en-us
 title: Mai Pham
 theme: PaperMod
 
-
-
 menu:
   main:
     - identifier: introduction
@@ -19,3 +17,4 @@ menu:
       name: example.org
       url: https://example.org
       weight: 30
+

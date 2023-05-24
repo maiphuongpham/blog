@@ -5,6 +5,7 @@ draft: false
 math: true
 ShowToc: true
 TocOpen: true
+hamBurgerMenu: true
 ---
 
 #### Black and Scholes assumed:
