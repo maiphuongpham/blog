@@ -5,9 +5,9 @@ theme: PaperMod
 
 menu:
   main:
-    - identifier: categories
-      name: categories
-      url: /categories/
+    - identifier: introduction
+      name: introduction
+      url: /content/posts/introduction.md
       weight: 10
     - identifier: tags
       name: tags
