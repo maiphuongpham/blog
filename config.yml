@@ -7,7 +7,7 @@ menu:
   main:
     - identifier: introduction
       name: introduction
-      url: "https://maiphuongpham.github.io/blog/introduction.md/"
+      url: /posts/introduction.md
       weight: 10
     - identifier: tags
       name: tags
