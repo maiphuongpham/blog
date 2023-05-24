@@ -2,17 +2,47 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>/</loc>
+    <loc>https://maiphuongpham.github.io/blog/posts/introduction/</loc>
+    <lastmod>2023-04-19T15:54:07-08:00</lastmod>
+  </url><url>
+    <loc>https://maiphuongpham.github.io/blog/</loc>
+    <lastmod>2023-04-19T15:54:07-08:00</lastmod>
+  </url><url>
+    <loc>https://maiphuongpham.github.io/blog/posts/</loc>
+    <lastmod>2023-04-19T15:54:07-08:00</lastmod>
+  </url><url>
+    <loc>https://maiphuongpham.github.io/blog/posts/exponential_poisson/</loc>
+    <lastmod>2023-04-19T15:54:07-08:00</lastmod>
+  </url><url>
+    <loc>https://maiphuongpham.github.io/blog/posts/growth/</loc>
+    <lastmod>2023-03-29T15:54:07-08:00</lastmod>
+  </url><url>
+    <loc>https://maiphuongpham.github.io/blog/posts/international_parity/</loc>
+    <lastmod>2023-03-22T15:54:07-08:00</lastmod>
+  </url><url>
+    <loc>https://maiphuongpham.github.io/blog/posts/linear_regression/</loc>
+    <lastmod>2023-03-17T15:54:07-08:00</lastmod>
+  </url><url>
+    <loc>https://maiphuongpham.github.io/blog/posts/machine_learning/</loc>
+    <lastmod>2023-03-17T15:54:07-08:00</lastmod>
+  </url><url>
+    <loc>https://maiphuongpham.github.io/blog/posts/swaps/</loc>
+    <lastmod>2023-03-17T15:54:07-08:00</lastmod>
+  </url><url>
+    <loc>https://maiphuongpham.github.io/blog/posts/term-structure/</loc>
+    <lastmod>2023-03-17T15:54:07-08:00</lastmod>
+  </url><url>
+    <loc>https://maiphuongpham.github.io/blog/posts/black_scholes/</loc>
+    <lastmod>2023-03-15T15:54:07-08:00</lastmod>
+  </url><url>
+    <loc>https://maiphuongpham.github.io/blog/posts/mundell-fleming/</loc>
+    <lastmod>2023-03-15T15:54:07-08:00</lastmod>
+  </url><url>
+    <loc>https://maiphuongpham.github.io/blog/posts/bond_duration/</loc>
     <lastmod>2023-02-21T15:54:07-08:00</lastmod>
   </url><url>
-    <loc>/posts/</loc>
-    <lastmod>2023-02-21T15:54:07-08:00</lastmod>
+    <loc>https://maiphuongpham.github.io/blog/categories/</loc>
   </url><url>
-    <loc>/posts/first/</loc>
-    <lastmod>2023-02-21T15:54:07-08:00</lastmod>
-  </url><url>
-    <loc>/categories/</loc>
-  </url><url>
-    <loc>/tags/</loc>
+    <loc>https://maiphuongpham.github.io/blog/tags/</loc>
   </url>
 </urlset>

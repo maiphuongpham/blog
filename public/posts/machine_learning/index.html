@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Machine Learning | Mai Pham</title>
+<meta name="keywords" content="">
+<meta name="description" content="Supervised Machine Learning algorithms Penalized Regression (Dimention Reduction)
+$$\min \sum_{i=1}^{n} \epsilon_{i}^{2} &#43; \lambda \sum_{i=1}^{k} |\hat{b_{k}}|$$
+where $|\hat{b_{k}}|$ is the number of included features.
+Support Vector Machine (Classification, Regression and Outlier Detection)
+Maximize the probability of making a correct prediction by determining the (linear) boundary that is furthest from all observations.
+Trade-off between a wider margin and a lower total error penalty.
+K-nearest Neighbour (Classification (sometimes regression))
+Classify new observations by finding similarities in the existing data.">
+<meta name="author" content="">
+<link rel="canonical" href="https://maiphuongpham.github.io/blog/posts/machine_learning/">
+<link crossorigin="anonymous" href="/blog/assets/css/stylesheet.6a98292fb8fa8cf0f3ba4042d4b75515c04267550f3ad49ff6271b5af9562443.css" integrity="sha256-apgpL7j6jPDzukBC1LdVFcBCZ1UPOtSf9icbWvlWJEM=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/blog/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://maiphuongpham.github.io/blog/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://maiphuongpham.github.io/blog/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://maiphuongpham.github.io/blog/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://maiphuongpham.github.io/blog/apple-touch-icon.png">
+<link rel="mask-icon" href="https://maiphuongpham.github.io/blog/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css" integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js" integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+            delimiters: [
+                {left: "$$", right: "$$", display: true},
+                {left: "$", right: "$", display: false}
+            ]
+        });
+    });
+</script>
+
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://maiphuongpham.github.io/blog/" accesskey="h" title="Mai Pham (Alt + H)">Mai Pham</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://maiphuongpham.github.io/blog/maipham/content/posts/introduction.md/" title="introduction">
+                    <span>introduction</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://maiphuongpham.github.io/blog/tags/" title="tags">
+                    <span>tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://example.org" title="example.org">
+                    <span>example.org</span>&nbsp;
+                    <svg fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12">
+                        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path>
+                        <path d="M15 3h6v6"></path>
+                        <path d="M10 14L21 3"></path>
+                    </svg>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title">
+      Machine Learning
+    </h1>
+    <div class="post-meta"><span title='2023-03-17 15:54:07 -0800 -0800'>March 17, 2023</span>
+
+</div>
+  </header> 
+  <div class="post-content"><h1 id="supervised-machine-learning-algorithms">Supervised Machine Learning algorithms<a hidden class="anchor" aria-hidden="true" href="#supervised-machine-learning-algorithms">#</a></h1>
+<h2 id="penalized-regression">Penalized Regression<a hidden class="anchor" aria-hidden="true" href="#penalized-regression">#</a></h2>
+<p>(Dimention Reduction)</p>
+<p>$$\min \sum_{i=1}^{n} \epsilon_{i}^{2} + \lambda \sum_{i=1}^{k} |\hat{b_{k}}|$$</p>
+<p>where $|\hat{b_{k}}|$ is the number of included features.</p>
+<h2 id="support-vector-machine">Support Vector Machine<a hidden class="anchor" aria-hidden="true" href="#support-vector-machine">#</a></h2>
+<p>(Classification, Regression and Outlier Detection)</p>
+<p>Maximize the probability of making a correct prediction by determining the (linear) boundary that is furthest from all observations.</p>
+<p>Trade-off between a wider margin and a lower total error penalty.</p>
+<h2 id="k-nearest-neighbour">K-nearest Neighbour<a hidden class="anchor" aria-hidden="true" href="#k-nearest-neighbour">#</a></h2>
+<p>(Classification (sometimes regression))</p>
+<p>Classify new observations by finding similarities in the existing data.</p>
+<p>Sensitive to irrelevant and correlated features.</p>
+<h2 id="classification-and-regression-trees-cart">Classification and Regression Trees (CART)<a hidden class="anchor" aria-hidden="true" href="#classification-and-regression-trees-cart">#</a></h2>
+<h2 id="ensemble-learning-and-random-forests">Ensemble Learning and Random Forests<a hidden class="anchor" aria-hidden="true" href="#ensemble-learning-and-random-forests">#</a></h2>
+<h1 id="unsupervised-machine-learning-algorithms">Unsupervised Machine Learning Algorithms<a hidden class="anchor" aria-hidden="true" href="#unsupervised-machine-learning-algorithms">#</a></h1>
+<h2 id="principal-components-analysis">Principal Components Analysis<a hidden class="anchor" aria-hidden="true" href="#principal-components-analysis">#</a></h2>
+<p>(Dimention Reduction)</p>
+<h2 id="clustering">Clustering<a hidden class="anchor" aria-hidden="true" href="#clustering">#</a></h2>
+<h3 id="k-mean-clustering">K-mean clustering<a hidden class="anchor" aria-hidden="true" href="#k-mean-clustering">#</a></h3>
+<h3 id="hieracrchical-clustering">Hieracrchical clustering<a hidden class="anchor" aria-hidden="true" href="#hieracrchical-clustering">#</a></h3>
+<h1 id="deep-learning">Deep Learning<a hidden class="anchor" aria-hidden="true" href="#deep-learning">#</a></h1>
+<h2 id="neural-networks">Neural Networks<a hidden class="anchor" aria-hidden="true" href="#neural-networks">#</a></h2>
+<p>(Classification, Regression supervised learning)</p>
+<h2 id="deep-learning-nets">Deep Learning Nets<a hidden class="anchor" aria-hidden="true" href="#deep-learning-nets">#</a></h2>
+<p>Neural networks with many hidden layers (at least 3, typically &gt;20)</p>
+<p>(image, pattern, speech recognition)</p>
+<h2 id="reinforcement-learning">Reinforcement Learning<a hidden class="anchor" aria-hidden="true" href="#reinforcement-learning">#</a></h2>
+<p>(unsupervised)</p>
+<h1 id="big-data">Big Data<a hidden class="anchor" aria-hidden="true" href="#big-data">#</a></h1>
+<h2 id="characteristics">Characteristics:<a hidden class="anchor" aria-hidden="true" href="#characteristics">#</a></h2>
+<ol>
+<li>Volume</li>
+<li>Variety</li>
+<li>Velocity</li>
+<li>Veracity</li>
+</ol>
+<h2 id="stages-in-big-data-project">Stages in Big Data project:<a hidden class="anchor" aria-hidden="true" href="#stages-in-big-data-project">#</a></h2>
+<ol>
+<li>Conceptualize the task / Text problem formulation</li>
+<li>Data Collection / Curation</li>
+<li>Data Preparation / Preprocessing / Text wrangling</li>
+</ol>
+<h3 id="structured-data">Structured data<a hidden class="anchor" aria-hidden="true" href="#structured-data">#</a></h3>
+<p>3.1. Data Cleansing
+incomplete (missing entries), invalid (out of meaningful range), inaccurate (not true), inconsistent (conflicts with other data), non-uniform (different formatting), duplication
+3.2. Data Processing</p>
+<ul>
+<li>Transformations: extraction (e.g. DOB to Age), aggregation (e.g. street address + city = GPS co-ordinates), filtration (e.g. only L2 CFA candidates), selection (e.g. eliminate extra columns), conversion (e.g. categorical into (0,1) values)</li>
+<li>Outliers: delete (trimming), winsorization (replace with min/max values)</li>
+<li>Scaling: normalization ($\frac{\x_{i} - x_{\min}}{x_{\max} - x_{\min}}$ rescales to (0,1) sensitive to outliers), standardization ($\frac{\x_{i} - \mu}{\sigma}$ centers and rescales for normal distribution),studentization ($\frac{x_{i} - \bar{x}}{s/\sqrt{n}}$)</li>
+</ul>
+<h3 id="unstructured-data">Unstructured data<a hidden class="anchor" aria-hidden="true" href="#unstructured-data">#</a></h3>
+<p>Cleasing: remove html, punctuation (some), numbers, white spaces, tokenization (unigram / biogram / n-grams)</p>
+<p>Normalize: lowercasing, remove stop words, stemming / lemmatization</p>
+<p>result:
+bag of words, &lsquo;document term&rsquo; matrix (encoded - structured)</p>
+<ol start="4">
+<li>Data Exploration
+4.1. Data Exploratory Analysis (visualize)
+4.2.Feature Selection
+remove redundant features, statistical tests to determine relevancy, dimension reduction (PCA)</li>
+</ol>
+<ul>
+<li>remove most and least frequent:
+$$TF: \frac{# \text{obs}}{Total}$$</li>
+</ul>
+<p>$$DF = \frac{# \text{docs}}{Total}$$</p>
+<p>$$IDF: \ln \left( \frac{1}{DF}\right)$$
+$$TF - IDF = TF \times IDF$$</p>
+<ul>
+<li>Chi-square test: identify tokens in classes.</li>
+<li>mutual information (MI): 0 - token&rsquo;s distribution is the same in all classes, 1 - token only occurs in one class</li>
+</ul>
+<p>4.3.Feature Engineering
+creating new feature, decompose into multiple features (e.g. numbers, n-grams, name entity recognition, parts of speech classification)</p>
+<ol start="5">
+<li>Model Training / Classifier output
+5.1.Method Selection
+depends on type of problem, size of data</li>
+</ol>
+<p>5.2.Performance Evaluation
+precision: $P = \frac{TP}{TP + FP}$
+recall: $R = \frac{TP}{TP + FN}$
+accuracy: $Acc = \frac{TP + TN}{TP + FP + TN + FN}$
+$F1 = \frac{2\times P \times R}{P + R}$</p>
+<p>receiver operating characteristic (ROC) - convex curve
+False Positive Rate $FPR = \frac{FP}{TN + FP}$
+True Positive Rate $TPR = \frac{TP}{TP + FN}$ (Recall)</p>
+<p>Root mean squared error (RMSE)
+$$RMSE = \sqrt{\sum_{i=1}^{n} \frac{(\hat{y_{i}} - y_{i})^2}{n}}$$</p>
+<p>5.3.Tuning</p>
+<p>minimize bias error + variance error (MSE)</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2023 <a href="https://maiphuongpham.github.io/blog/">Mai Pham</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

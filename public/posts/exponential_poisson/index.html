@@ -5,12 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="noindex, nofollow">
-<title>404 Page not found | Mai Pham</title>
+<title>The Exponential Distribution and the Poisson Process | Mai Pham</title>
 <meta name="keywords" content="">
-<meta name="description" content="">
+<meta name="description" content="The Exponential Distribution and the Poisson Process The time $T$ required to repair a machine is an exponentially distributed random variable with mean $\frac{1}{2}$ (hours). (a) What is the probability that a repair time exceeds $\frac{1}{2}$ hour? (b) What is the probability that a repair takes at least $12\frac{1}{2} hours given that its duration exceeds 12 hours? See answer (a) Since $T \sim \text{Exp} (2)$, we have $P(T &gt; \frac{1}{2}) = e^{-2{1}{2}} = e^{-1}$">
 <meta name="author" content="">
-<link rel="canonical" href="https://maiphuongpham.github.io/blog/404.html">
+<link rel="canonical" href="https://maiphuongpham.github.io/blog/posts/exponential_poisson/">
 <link crossorigin="anonymous" href="/blog/assets/css/stylesheet.6a98292fb8fa8cf0f3ba4042d4b75515c04267550f3ad49ff6271b5af9562443.css" integrity="sha256-apgpL7j6jPDzukBC1LdVFcBCZ1UPOtSf9icbWvlWJEM=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/blog/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
+    onload="hljs.initHighlightingOnLoad();"></script>
 <link rel="icon" href="https://maiphuongpham.github.io/blog/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://maiphuongpham.github.io/blog/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://maiphuongpham.github.io/blog/favicon-32x32.png">
@@ -54,11 +56,23 @@
         }
 
     </style>
-</noscript>
+</noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css" integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js" integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+            delimiters: [
+                {left: "$$", right: "$$", display: true},
+                {left: "$", right: "$", display: false}
+            ]
+        });
+    });
+</script>
 
 </head>
 
-<body class="list" id="top">
+<body class="" id="top">
 <script>
     if (localStorage.getItem("pref-theme") === "dark") {
         document.body.classList.add('dark');
@@ -123,7 +137,42 @@
     </nav>
 </header>
 <main class="main">
-<div class="not-found">404</div>
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title">
+      The Exponential Distribution and the Poisson Process
+    </h1>
+    <div class="post-meta"><span title='2023-04-19 15:54:07 -0800 -0800'>April 19, 2023</span>
+
+</div>
+  </header> 
+  <div class="post-content"><h1 id="the-exponential-distribution-and-the-poisson-process">The Exponential Distribution and the Poisson Process<a hidden class="anchor" aria-hidden="true" href="#the-exponential-distribution-and-the-poisson-process">#</a></h1>
+<ol>
+<li>The time $T$ required to repair a machine is an exponentially distributed random variable with mean $\frac{1}{2}$ (hours).
+(a) What is the probability that a repair time exceeds $\frac{1}{2}$ hour?
+(b) What is the probability that a repair takes at least $12\frac{1}{2} hours given that its duration exceeds 12 hours?</li>
+</ol>
+<details>
+    <summary>See answer</summary>
+    <p>(a) Since $T \sim \text{Exp} (2)$, we have $P(T &gt; \frac{1}{2}) = e^{-2{1}{2}} = e^{-1}$</p>
+<p>(b) Using the memoryless property of the exponential distribution yields:
+$P(T &gt; 12\frac{1}{2} | T &gt; 12) = P(T &gt; \frac{1}{2}) = e^{-1}$</p>
+
+  </details>
+<ol start="2">
+<li>Suppose that you arrive at a single-teller bank to find five other customers in the bank, one being served and the other four waiting in line. You join the end of the line. If the service times are all exponential with rate $\mu$, what is the expected amount of time you will spend in the bank?</li>
+</ol>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
+</article>
     </main>
     
 <footer class="footer">

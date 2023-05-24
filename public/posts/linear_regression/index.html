@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Linear Regression | Mai Pham</title>
+<meta name="keywords" content="">
+<meta name="description" content="Assumptions Linearity Homoskedasticity Independence of errors Normality (of regression residuals) Independence of IVs Evaluating Model Fit Coefficient of Determination $R^{2}$ $$R^{2} = \frac{SSR}{SST} = \frac{\sum(\hat{Y_{i}} - \bar{Y})^{2}}{\sum(Y_{i} - \bar{Y})^{2}}$$
+Adjusted $R^{2}$ Proposed by Mordecai Ezekiel, the adjusted $R^{2}$ is defined as
+$$\bar{R}^{2} = 1 - \frac{SSE/ (n-k-1)}{SST/(n-1)} = 1 - \left[ \left( \frac{n-1}{n-k-1} \right) (1 - R^{2}) \right]$$
+For $k \ge 1, \bar{R}^{2} &lt; R^{2}$ if coefficient&rsquo;s $|t - \text{stat}| &gt; 1, \bar{R}^{2} \uparrow, \text{else } \bar{R}^{2} \downarrow$">
+<meta name="author" content="">
+<link rel="canonical" href="https://maiphuongpham.github.io/blog/posts/linear_regression/">
+<link crossorigin="anonymous" href="/blog/assets/css/stylesheet.6a98292fb8fa8cf0f3ba4042d4b75515c04267550f3ad49ff6271b5af9562443.css" integrity="sha256-apgpL7j6jPDzukBC1LdVFcBCZ1UPOtSf9icbWvlWJEM=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/blog/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://maiphuongpham.github.io/blog/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://maiphuongpham.github.io/blog/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://maiphuongpham.github.io/blog/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://maiphuongpham.github.io/blog/apple-touch-icon.png">
+<link rel="mask-icon" href="https://maiphuongpham.github.io/blog/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css" integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js" integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+            delimiters: [
+                {left: "$$", right: "$$", display: true},
+                {left: "$", right: "$", display: false}
+            ]
+        });
+    });
+</script>
+
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://maiphuongpham.github.io/blog/" accesskey="h" title="Mai Pham (Alt + H)">Mai Pham</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://maiphuongpham.github.io/blog/maipham/content/posts/introduction.md/" title="introduction">
+                    <span>introduction</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://maiphuongpham.github.io/blog/tags/" title="tags">
+                    <span>tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://example.org" title="example.org">
+                    <span>example.org</span>&nbsp;
+                    <svg fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12">
+                        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path>
+                        <path d="M15 3h6v6"></path>
+                        <path d="M10 14L21 3"></path>
+                    </svg>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title">
+      Linear Regression
+    </h1>
+    <div class="post-meta"><span title='2023-03-17 15:54:07 -0800 -0800'>March 17, 2023</span>
+
+</div>
+  </header> 
+  <div class="post-content"><h3 id="assumptions">Assumptions<a hidden class="anchor" aria-hidden="true" href="#assumptions">#</a></h3>
+<ol>
+<li>Linearity</li>
+<li>Homoskedasticity</li>
+<li>Independence of errors</li>
+<li>Normality (of regression residuals)</li>
+<li>Independence of IVs</li>
+</ol>
+<h3 id="evaluating-model-fit">Evaluating Model Fit<a hidden class="anchor" aria-hidden="true" href="#evaluating-model-fit">#</a></h3>
+<h4 id="coefficient-of-determination-r2">Coefficient of Determination $R^{2}$<a hidden class="anchor" aria-hidden="true" href="#coefficient-of-determination-r2">#</a></h4>
+<p>$$R^{2} = \frac{SSR}{SST} = \frac{\sum(\hat{Y_{i}} - \bar{Y})^{2}}{\sum(Y_{i} - \bar{Y})^{2}}$$</p>
+<h4 id="adjusted-r2">Adjusted $R^{2}$<a hidden class="anchor" aria-hidden="true" href="#adjusted-r2">#</a></h4>
+<p>Proposed by Mordecai Ezekiel, the adjusted $R^{2}$ is defined as</p>
+<p>$$\bar{R}^{2} = 1 - \frac{SSE/ (n-k-1)}{SST/(n-1)} = 1 - \left[ \left( \frac{n-1}{n-k-1} \right) (1 - R^{2}) \right]$$</p>
+<p>For $k \ge 1, \bar{R}^{2} &lt; R^{2}$
+if coefficient&rsquo;s $|t - \text{stat}| &gt; 1, \bar{R}^{2} \uparrow, \text{else } \bar{R}^{2} \downarrow$</p>
+<h4 id="aic-and-bic">AIC and BIC<a hidden class="anchor" aria-hidden="true" href="#aic-and-bic">#</a></h4>
+<p>AIC - Akaike&rsquo;s Information Criterion</p>
+<p>$$AIC = n\ln(SSE/n) + 2(k+1)$$</p>
+<p>Better for prediction purposes</p>
+<p>$$BIC = n\ln(SSE/n) + \ln(n)(k+1)$$</p>
+<p>Better when &ldquo;goodness of fit&rdquo; is preferred</p>
+<h4 id="hypothesis-testing">Hypothesis Testing<a hidden class="anchor" aria-hidden="true" href="#hypothesis-testing">#</a></h4>
+<p>Testing single coeffient</p>
+<p>t-stat vs critical value</p>
+<p>Testing joint coefficients</p>
+<p>$$F = \frac{(SSE_{\text{restricted}} - SSE_{\text{unrestricted}})/q}{SSE_{\text{unrestricted}} / (n-k-1)}$$</p>
+<p>with $q$ being the number of restrictions</p>
+<p>Testing unrestricted model
+$$F = \frac{\text{Explained variance}}{\text{Unexplained variance}} = \frac{MSR}{SSR} = \frac{SSR/k}{SSE/(n-k-1)}$$</p>
+<h3 id="model-mispecification">Model Mispecification<a hidden class="anchor" aria-hidden="true" href="#model-mispecification">#</a></h3>
+<h4 id="failures-in-regression-functional-form">Failures in regression functional form<a hidden class="anchor" aria-hidden="true" href="#failures-in-regression-functional-form">#</a></h4>
+<ol>
+<li>Omitted variables</li>
+<li>Inappropriate form of variables</li>
+<li>Inappropriate scaling</li>
+<li>Inappropriate pooling of data</li>
+</ol>
+<h4 id="heteroskedastic">Heteroskedastic<a hidden class="anchor" aria-hidden="true" href="#heteroskedastic">#</a></h4>
+<p>Non-constant $Var(\epsilon)$ across observations</p>
+<ol>
+<li>Unconditional heteroskedasticity: no issues for inference</li>
+<li>Conditional heteroskedasticity: SE underestimated or overestimated, t-stats inflated or deflated, F-test unreliable.</li>
+</ol>
+<p>Test: BP (Breusch Pagan) $\chi_{k}^{2} = n R_{e}^{2}$ with $R_{e}^{2}$ from the regression ($e, VIs$)</p>
+<p>Correct: Compute robust SEs (White-corrected SEs)</p>
+<h4 id="serial-correlation-autocorrelation">Serial Correlation (autocorrelation)<a hidden class="anchor" aria-hidden="true" href="#serial-correlation-autocorrelation">#</a></h4>
+<p>Underestimate SE, inflate $t-stat = \frac{X - \bar{X}}{SE}$ and $F-stat = \frac{MSR}{MSE}$</p>
+<p>Test: DW (Durbin-Watson - tests first-order SC only), BG (Breusch-Godfrey - tests for SC at any lag)</p>
+<p>Correct: SC-consistent SEs, Newey-West SEs (will also correct for CH)</p>
+<h4 id="multicollinearity">Multicollinearity<a hidden class="anchor" aria-hidden="true" href="#multicollinearity">#</a></h4>
+<p>Inflates SEs and insignificant t-stats but possible significant F-stat</p>
+<p>Test: VIF (Variance Inflation Factor) $VIF_{X_{1}} = \frac{1}{1 - R_{X_{1}}}^{2}$</p>
+<p>min = 1 when $R_{X_{1}}^{2} = 0$</p>
+<p>$&gt;5$ becoming concerning</p>
+<p>$&gt;10$ indicates MC</p>
+<p>Correct:
+Exclude one or more IVs (preferred)
+Use a different proxy for one of the variables
+Increase sample size</p>
+<p>If the goal is prediction, the a significant model is more important than a significant coefficient (MS less of an issue)</p>
+<h3 id="extensions-of-multiple-regression">Extensions of Multiple Regression<a hidden class="anchor" aria-hidden="true" href="#extensions-of-multiple-regression">#</a></h3>
+<h4 id="influential-data-points">Influential Data Points<a hidden class="anchor" aria-hidden="true" href="#influential-data-points">#</a></h4>
+<h5 id="high-leverage-points">High leverage points<a hidden class="anchor" aria-hidden="true" href="#high-leverage-points">#</a></h5>
+<p>$$h_{ii} = \frac{1}{n} + \frac{(X_{i} - \bar{X})^{2}}{\sum (X_{i} - \bar{X})^{2}} \in [1/n, 1]$$</p>
+<p>For small samples: If $h_{ii} &gt; 3\left( \frac{k+1}{n} \right)$, $i$ is a potential influencer</p>
+<p>For large samples: $3\left( \frac{k+1}{n} \right)$ (Belsey, Kuh, Welsch, 1980)</p>
+<h5 id="outliers">Outliers<a hidden class="anchor" aria-hidden="true" href="#outliers">#</a></h5>
+<ol>
+<li>Delete i</li>
+<li>Calculate a new regression on $n-1$ cases</li>
+<li>Calculate residual $e_{i}* = Y_{i} - \hat{Y}$ for all n</li>
+<li>Calculate studentized residual
+$$t_{i}* = \frac{e_{i}*}{S_{e}} = \frac{e_{i}}{\hat{\sigma \sqrt{1-h_{ii}}}}$$</li>
+</ol>
+<p>Where $\sigma$ is an appropriate estimate of $\sigma$ (e.g., $MSE = \frac{SSE}{n-k-1}$)</p>
+<p>$$t_{i}* = e_{i}\sqrt{\frac{(n-k-1)}{SSE(1-h_{ii})}}$$</p>
+<p>$|t_{i}*| &gt; $ critical $t$ for small samples</p>
+<p>$|t_{i}*| &gt; 3$ for large samples</p>
+<h5 id="influential-data-points-1">Influential data points<a hidden class="anchor" aria-hidden="true" href="#influential-data-points-1">#</a></h5>
+<p>Cook&rsquo;s Distance
+$$D_{i} = \frac{e_{i}^{2}}{k\times MSE} \frac{h_{ii}}{(1 - h_{ii})^{2}}$$ (Discrepancy $\times$ Leverage)</p>
+<p>Large $D_{i}$ indicates influencer</p>
+<p>$D_{i} &gt; 0.5$ may be influencial
+$D_{i} &gt; 1$ likely to be (common)
+$D_{i} &gt; 2\sqrt{k/n}$ - large samples</p>
+<h4 id="dummy-variables-and-logit-model">Dummy variables and Logit Model<a hidden class="anchor" aria-hidden="true" href="#dummy-variables-and-logit-model">#</a></h4>
+<h5 id="goodness-of-fit">Goodness of Fit:<a hidden class="anchor" aria-hidden="true" href="#goodness-of-fit">#</a></h5>
+<p>Likelihood ratio (LR) test:</p>
+<p>$$LR = -2(\text{log likelihood restricted model} - \text{log likelihood unrestricted model})$$</p>
+<p>no $R^{2}$, just pseudo-$R^{2}$</p>
+<h3 id="time-series-analysis">Time-Series Analysis<a hidden class="anchor" aria-hidden="true" href="#time-series-analysis">#</a></h3>
+<h4 id="trend-models">Trend Models<a hidden class="anchor" aria-hidden="true" href="#trend-models">#</a></h4>
+<p>Linear: DV changes at a constant rate with time (time is the IV)</p>
+<p>$$y_{t} = b_{0} + b_{1} t + \epsilon_{t}$$</p>
+<p>Log-Linear: DV changes at a constant growth rate. Let $y_{t} = e^{b_{0} + b_{1} t + \epsilon_{t}}$</p>
+<p>$$\ln(y_{t}) = b_{0} + b_{1} t + \epsilon_{t}$$</p>
+<p>Note: $\epsilon_{t}$ must be uncorrelated accoress time periods (use Durbin-Watson test on residual $H_{0}: DW = 2$)</p>
+<h4 id="autoregressive-time-series-model">Autoregressive Time-Series Model<a hidden class="anchor" aria-hidden="true" href="#autoregressive-time-series-model">#</a></h4>
+<p>$$AR(1) x_{t} = b_{0} + b_{1} x_{t-1} + \epsilon_{t}$$</p>
+<p>$$AR(p) x_{t} = b_{0} + b_{1} x_{t-1} + b_{2} x_{t-2} + \ldots + b_{p} x_{t-p} + \epsilon_{t}$$</p>
+<p>Covariance Stationary Series: mean, var, cov($y_{t}, y_{t-s}$) constant and finite in all periods, otherwise estimate of $b_{1}$ will be biased.</p>
+<p>Cannot use DW statistics to test Serial Correlation, instead</p>
+<ol>
+<li>Estimate an AR model (e.g. AR(1))</li>
+<li>Compute $\rho_{\epsilon \epsilon_{t-k}}$ (e.g. AR(2))</li>
+<li>Test $H_{0}: \rho_{\epsilon \epsilon_{t-k}} = 0$ (reject $H_{0}$ implies a misspecified model)</li>
+</ol>
+<h5 id="mean-reversion">Mean Reversion<a hidden class="anchor" aria-hidden="true" href="#mean-reversion">#</a></h5>
+<p>Let $x_{t} = b_{0} + b_{1} x_{t}$ to find the reverting level.</p>
+<h4 id="comparing-models">Comparing Models<a hidden class="anchor" aria-hidden="true" href="#comparing-models">#</a></h4>
+<p>RMSE</p>
+<p>Instability of Regression Coefficients (using experience and judgement to decide the correct time period)</p>
+<h4 id="random-walk--unit-roots">Random Walk &amp; Unit Roots<a hidden class="anchor" aria-hidden="true" href="#random-walk--unit-roots">#</a></h4>
+<p>AR(1) with $b_{0} = 0, b_{1} = 0$ - can only conclude that we have a random walk</p>
+<p>If not RW on AR(1): transforms into a covariance-stationary time-series by first differencing</p>
+<h5 id="unit-root-test-of-non-stationarity">Unit root test of non-stationarity<a hidden class="anchor" aria-hidden="true" href="#unit-root-test-of-non-stationarity">#</a></h5>
+<p>Dickey-Fuller test for a unit root</p>
+<p>$|b_{1}| &lt; 1$ from AR(1): series is covariance stationary
+$b_{1} = 1$, unit root, not covariance stationary</p>
+<h4 id="seasonality">Seasonality<a hidden class="anchor" aria-hidden="true" href="#seasonality">#</a></h4>
+<p>Use a seasonal lag</p>
+<h4 id="arch-models">ARCH Models<a hidden class="anchor" aria-hidden="true" href="#arch-models">#</a></h4>
+<p>Autoregressive Conditional Heleroskedasticity</p>
+<h4 id="regression-with-more-than-1-time-series">Regression with more than 1 Time-Series<a hidden class="anchor" aria-hidden="true" href="#regression-with-more-than-1-time-series">#</a></h4>
+<p>Test each time-series for unit root using DF test</p>
+<p>If both have a unit root, see if they&rsquo;re cointegrated (i.e. share a common trend), if yes, can only evaluate long term relation.</p>
+<p>Use Engle-Granger DF to test cointegration (reject to have cointegration)</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2023 <a href="https://maiphuongpham.github.io/blog/">Mai Pham</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

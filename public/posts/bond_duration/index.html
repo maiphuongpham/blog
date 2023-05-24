@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Bond Duration | Mai Pham</title>
+<meta name="keywords" content="">
+<meta name="description" content="Duration the measure of a bond&rsquo;s interest rate risk or sensitivity of a bond&rsquo;s full price to a change in its yield.
+Macaulay Duration Introduced by Frederick Macaulay (1938), is the weighted average number of years until each of the bond&rsquo;s promised cash flow is to be paid, where the weights are the present values of each cash flow as a percentage of the bond&rsquo;s full value.
+Macaulay Duration $D$ is defined as">
+<meta name="author" content="">
+<link rel="canonical" href="https://maiphuongpham.github.io/blog/posts/bond_duration/">
+<link crossorigin="anonymous" href="/blog/assets/css/stylesheet.6a98292fb8fa8cf0f3ba4042d4b75515c04267550f3ad49ff6271b5af9562443.css" integrity="sha256-apgpL7j6jPDzukBC1LdVFcBCZ1UPOtSf9icbWvlWJEM=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/blog/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://maiphuongpham.github.io/blog/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://maiphuongpham.github.io/blog/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://maiphuongpham.github.io/blog/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://maiphuongpham.github.io/blog/apple-touch-icon.png">
+<link rel="mask-icon" href="https://maiphuongpham.github.io/blog/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css" integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js" integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+            delimiters: [
+                {left: "$$", right: "$$", display: true},
+                {left: "$", right: "$", display: false}
+            ]
+        });
+    });
+</script>
+
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://maiphuongpham.github.io/blog/" accesskey="h" title="Mai Pham (Alt + H)">Mai Pham</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://maiphuongpham.github.io/blog/maipham/content/posts/introduction.md/" title="introduction">
+                    <span>introduction</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://maiphuongpham.github.io/blog/tags/" title="tags">
+                    <span>tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://example.org" title="example.org">
+                    <span>example.org</span>&nbsp;
+                    <svg fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12">
+                        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path>
+                        <path d="M15 3h6v6"></path>
+                        <path d="M10 14L21 3"></path>
+                    </svg>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title">
+      Bond Duration
+    </h1>
+    <div class="post-meta"><span title='2023-02-21 15:54:07 -0800 PST'>February 21, 2023</span>
+
+</div>
+  </header> 
+  <div class="post-content"><p>Duration the measure of a bond&rsquo;s interest rate risk or sensitivity of a bond&rsquo;s full price to a change in its yield.</p>
+<h3 id="macaulay-duration">Macaulay Duration<a hidden class="anchor" aria-hidden="true" href="#macaulay-duration">#</a></h3>
+<p>Introduced by Frederick Macaulay (1938), is the weighted average number of years until each of the bond&rsquo;s promised cash flow is to be paid, where the weights are the present values of each cash flow as a percentage of the bond&rsquo;s full value.</p>
+<p>Macaulay Duration $D$ is defined as</p>
+<p>$$ D = \frac{\sum_{k=1}^{n} (k/m)c_{k} / [1 + (\lambda/m)]^{k}}{\text{PV}} $$</p>
+<p>where the bond makes payment $m$ times per year, with the payment in period $k$ being $c_{k}$, and there are $n$ periods remaining, $\lambda$ is the yield to maturity and</p>
+<p>$$PV = \sum_{k=1}^{n} \frac{c_{k}}{[1 + (\lambda/m)]^{k}}$$</p>
+<p>Note that the factor $k/m$ in the numerator of the formula for $D$ is time, measured in years.</p>
+<h4 id="theorem-1">Theorem 1<a hidden class="anchor" aria-hidden="true" href="#theorem-1">#</a></h4>
+<p>&quot; A bond&rsquo;s duration is equal to its maturity if and only if it is a zero-coupon bond (pure discount issue) or a one-period coupon bearing bond.&quot;</p>
+<h4 id="theorem-2">Theorem 2<a hidden class="anchor" aria-hidden="true" href="#theorem-2">#</a></h4>
+<p>&quot; The duration of a coupon-bearing bond with a finite maturity of more than one period $(1 &lt; n &lt; \infty)$ has a duration which is shorter than its term to maturity.&quot;</p>
+<h4 id="theorem-3">Theorem 3<a hidden class="anchor" aria-hidden="true" href="#theorem-3">#</a></h4>
+<p>&ldquo;The duration of a perpetual bond $(n = \infty)$ is equal to $(1+ \lambda/m) / \lambda$ irrespective of its coupon rate.&rdquo;</p>
+<p>Corollary: &ldquo;The duration of a coupon-bearing bond approaches the limit $(1+ \lambda/m) / \lambda$ as the bond&rsquo;s maturity is lengthened to infinity.&rdquo;</p>
+<h4 id="theorem-4">Theorem 4<a hidden class="anchor" aria-hidden="true" href="#theorem-4">#</a></h4>
+<p>&ldquo;The duration of a coupon-bearing bond selling at par or above par increases monotonically with its term to maturity and approaches $(1+ \lambda/m) / \lambda$ as the term to maturity goes to infinity.&rdquo;</p>
+<h4 id="theorem-5">Theorem 5<a hidden class="anchor" aria-hidden="true" href="#theorem-5">#</a></h4>
+<p>&ldquo;The duration of a coupon-bearing bond selling below par reaches a maximum before maturity reaches infinity and then recedes toward the limit $(1+ \lambda/m) / \lambda$</p>
+<h4 id="theorem-6">Theorem 6<a hidden class="anchor" aria-hidden="true" href="#theorem-6">#</a></h4>
+<p>&ldquo;The duration of a coupon-bearing bond selling below par reaches its maximum at a maturity directly related to the bond&rsquo;s coupon rate and inversely related to the market yield.&rdquo;</p>
+<h4 id="theorem-7">Theorem 7<a hidden class="anchor" aria-hidden="true" href="#theorem-7">#</a></h4>
+<p>&ldquo;The longer a bond&rsquo;s term to maturity, the greater the difference between its term and its duration.&rdquo;</p>
+<h4 id="theorem-8">Theorem 8<a hidden class="anchor" aria-hidden="true" href="#theorem-8">#</a></h4>
+<p>&ldquo;A bond&rsquo;s duration varies inversely with its coupon rate (except for one period and perpetual bonds).&rdquo;</p>
+<h4 id="theorem-9">Theorem 9<a hidden class="anchor" aria-hidden="true" href="#theorem-9">#</a></h4>
+<p>&ldquo;The duration of a coupon-bearing bond is inversely related to its yield to maturity.&rdquo;</p>
+<h4 id="theorem-10">Theorem 10<a hidden class="anchor" aria-hidden="true" href="#theorem-10">#</a></h4>
+<p>&ldquo;The duration of a &ldquo;zero-yield&rdquo; bond is equal to $(1/2(n^2+n)i_{0} + 1)/(ni_{0} + 1)$ with $i_{0}$ being bond&rsquo;s coupon-rate.&rdquo;</p>
+<h4 id="theorem-11">Theorem 11<a hidden class="anchor" aria-hidden="true" href="#theorem-11">#</a></h4>
+<p>&ldquo;A bond&rsquo;s duration approaches unity as the bond&rsquo;s yield approaches infinity.&rdquo;</p>
+<h3 id="modified-duration">Modified Duration<a hidden class="anchor" aria-hidden="true" href="#modified-duration">#</a></h3>
+<p>Modified Duration is found by taking the first derivative of $P$ with respect to $\lambda$:</p>
+<p>$$\frac{dP}{d\lambda} = \sum_{k=1}^{n}\frac{dPV_{k}}{d\lambda} = -\sum_{k=1}^{n} \frac{(k/m)PV_{k}}{1 + (\lambda/m)} = - \frac{1}{1 + \lambda/m}DP = -D_{M}P$$</p>
+<p>Note:</p>
+<p>Price sensitivity formula: The derivative of price $P$ with respect to yield $\lambda$ of a fixed-income security is</p>
+<p>$$\frac{dP}{d\lambda} = -D_{M}P$$</p>
+<p>where $D_{M} = D/[1 + (\lambda/m)]$$ is the modified duration.</p>
+<p>Duration of a portfolio: Suppose there are m fixed-income securities with prices and durations of $P_{i}$ and $D_{i}$, respectively, $i = 1,2,\ldots,m$, all computed at a common yield. The portfolio consisting of the agregate of these securities has price $P$ and duration $D$, given by</p>
+<p>$$P = P_{1} + P_{2} + \ldots + P_{m}$$</p>
+<p>$$D = w_{1}D_{1} + w_{2}D_{2} + \ldots + w_{m}D_{m}$$</p>
+<p>where $w_{i} = P_{i} / P, i = 1,2,\ldots,m$.</p>
+<h3 id="approximate-modified-duration">Approximate Modified Duration<a hidden class="anchor" aria-hidden="true" href="#approximate-modified-duration">#</a></h3>
+<p>Taylor series expansion of the price as a function of interest rate:</p>
+<p>$$P(i+\Delta i) = P(i) + \frac{dP}{di}\Delta i + \frac{1}{2}\frac{d^{2}P}{di^{2}}(\Delta i)^{2} + \ldots$$</p>
+<p>Ignoring terms involving $(\Delta i)^{2}$ and higher yields</p>
+<p>$$-\frac{dP}{di}\frac{1}{P} \approx \frac{P(i) - P(i + \Delta i)}{(\Delta i)P(i)}$$</p>
+<p>and</p>
+<p>$$-\frac{dP}{di}\frac{1}{P} \approx \frac{P(i - \Delta i) - P(i)}{(\Delta i)P(i)}$$</p>
+<p>Averaging the right side of the last two equations yields</p>
+<p>$$D_{M}(P) \approx \frac{P(i - \Delta i) - P(i + \Delta i)}{2P(i)(\Delta i)}$$</p>
+<h3 id="effective-duration">Effective Duration<a hidden class="anchor" aria-hidden="true" href="#effective-duration">#</a></h3>
+<p>$$D_{E} \approx \frac{V_{-} - V_{+}}{2\times V_{0} \times \Delta \text{curve}}$$</p>
+<h3 id="key-rate-duration">Key Rate Duration<a hidden class="anchor" aria-hidden="true" href="#key-rate-duration">#</a></h3>
+<p>Introduced by Thomas Ho (1992), key rate duration (partial duration) is the sensitivity of the value of a bond or portfolio to changes in the spot rate for a specific maturity, holding other spot rates constant.</p>
+<p>A bond or portfolio will have a key rate duration for each maturity range on the spot rate curve.</p>
+<p>The sum of a bond&rsquo;s key rate durations equals its effective duration.</p>
+<p>Key rate duration is useful for measuring the effect of a nonparallel shift in the yield curve on a bond portfolio.</p>
+<h3 id="money-duration">Money Duration<a hidden class="anchor" aria-hidden="true" href="#money-duration">#</a></h3>
+<p>$$\text{money duration} = D_{M} P$$</p>
+<h3 id="convexity">Convexity<a hidden class="anchor" aria-hidden="true" href="#convexity">#</a></h3>
+<p>Using the Taylor series expansion and ignoring terms in powers of $(\Delta i)^{3}$ and higher yields</p>
+<p>$$P(i+\Delta i) - P(i) \approx \frac{dP}{di}\Delta i + \frac{1}{2}\frac{d^{2}P}{di^{2}}(\Delta i)^{2}$$</p>
+<p>$$P(i-\Delta i) - P(i) \approx \frac{dP}{di}(-\Delta i) + \frac{1}{2}\frac{d^{2}P}{di^{2}}(-\Delta i)^{2}$$</p>
+<p>which are summed to give the following approximation to</p>
+<p>$$\frac{d^{2}P}{di^{2}}(\Delta i)^{2} \approx P(i-\Delta i) - 2P(i) + P(i+\Delta i)$$.</p>
+<p>It follows that</p>
+<p>$$C = \frac{d^{2}}{di^{2}}\frac{1}{P} \approx \frac{P(i-\Delta i) - 2P(i) + P(i+\Delta i)}{P(i)(\Delta i)^2}$$</p>
+<h3 id="effective-convexity">Effective Convexity<a hidden class="anchor" aria-hidden="true" href="#effective-convexity">#</a></h3>
+<p>$$C_{E} \approx = \frac{V_{-} + V_{+} - 2V_{0}}{(\Delta \text{curve})^{2}V_{0}}$$</p>
+<h3 id="change-in-full-bond-price">Change in full bond price<a hidden class="anchor" aria-hidden="true" href="#change-in-full-bond-price">#</a></h3>
+<p>$$\Delta P = -D_{M}(\Delta \lambda) + 1/2 C(\Delta \lambda)^{2}$$</p>
+<h3 id="reference">Reference<a hidden class="anchor" aria-hidden="true" href="#reference">#</a></h3>
+<p>Hawawini, G. (2017). Bond Duration and Immunization. Routledge.</p>
+<p>Ho, T. S. Y. (1992). Key Rate Durations. The Journal of Fixed Income, 2(2), 29–44. <a href="https://doi.org/10.3905/jfi.1992.408049">https://doi.org/10.3905/jfi.1992.408049</a>
+‌
+Luenberger, D. G. (2014). Investment science. New York, Ny [U.A.] Oxford Univ. Press C.</p>
+<p>‌
+‌</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2023 <a href="https://maiphuongpham.github.io/blog/">Mai Pham</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>
