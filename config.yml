@@ -7,7 +7,7 @@ menu:
   main:
     - identifier: introduction
       name: introduction
-      url: "content/posts/introduction.md/"
+      url: /content/posts/introduction.md/
       weight: 10
     - identifier: tags
       name: tags
