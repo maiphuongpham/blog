@@ -7,7 +7,7 @@ menu:
   main:
     - identifier: introduction
       name: introduction
-      url: /maipham/content/posts/swaps.md/
+      url: "/posts/swaps.md/"
       weight: 10
     - identifier: tags
       name: tags
