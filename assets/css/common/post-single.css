@@ -457,7 +457,7 @@ h6:hover .anchor {
     text-align: left;
 }
 
-.ref {
+.refs {
     margin: 0 2px 40px 2px;
     border: 1px solid var(--border);
     background: var(--entry); 
@@ -474,7 +474,7 @@ h6:hover .anchor {
     width: var(--toc-width);
 }
 
-.wide .ref {
+.wide .refs {
     position: sticky;
     top: var(--gap);
     border: unset;
@@ -483,3 +483,5 @@ h6:hover .anchor {
     width: 100%;
     margin: 0 2px 40px 2px;
 }
+
+

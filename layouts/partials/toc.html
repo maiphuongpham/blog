@@ -135,8 +135,10 @@
 
         if (width - main - (toc * 2) - (gap * 4) > 0) {
             document.getElementById("toc-container").classList.add("wide");
+            document.getElementById("ref-container").classList.add("wide");
         } else {
             document.getElementById("toc-container").classList.remove("wide");
+            document.getElementById("ref-container").classList.remove("wide");
         }
     }
 
