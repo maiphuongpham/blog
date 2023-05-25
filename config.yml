@@ -6,7 +6,7 @@ theme: PaperMod
 menu:
   main:
     - identifier: introduction
-      name: introduction
+      name: Introduction
       url: introduction
       weight: 10
     - identifier: tags
@@ -18,3 +18,19 @@ menu:
       url: https://example.org
       weight: 30
 
+params:
+    homeInfoParams:
+        Title: Knowing is Growing
+        Content: "Learning is an incessant voyage of discovery, \
+        which demands prodigious time and a rigorous endeavor. \
+        This blog serves as a repository to perpetuate and nurture \
+        my intellectual prowess while graciously sharing the delight \
+        of acquiring knowledge with fellow seekers of wisdom. \
+        May your time here be filled with inspiration, \
+        enlightenment, and a profound sense of fulfillment."
+    
+    socialIcons: 
+        - name: "<platform>"
+          url: "<link>"
+        - name: "<platform 2>"
+          url: "<link2>"

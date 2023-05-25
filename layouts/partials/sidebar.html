@@ -1,0 +1,68 @@
+<aside id="ref-container" class="ref-container wide">
+  <div class="ref">
+      <!--<details {{if (.Param "RefOpen") }} open{{ end }}>
+          <summary accesskey="c" title="(Alt + C)">
+              <span class="details"> Hello World! </span>
+          </summary>
+      </details>-->
+      <p> Hello World</p>
+  </div>
+</aside>
+
+<script>
+  let activeElement;
+  let elements;
+  window.addEventListener('DOMContentLoaded', function (event) {
+      checkRefPosition();
+
+      elements = document.querySelectorAll('h1[id],h2[id],h3[id],h4[id],h5[id],h6[id]');
+      // Make the first header active
+      activeElement = elements[0];
+      document.querySelector(`.inner ul li a[href="#${activeElement.getAttribute('id')}"]`).classList.add('active');
+  }, false);
+
+  window.addEventListener('resize', function(event) {
+      checkRefPosition();
+  }, false);
+
+  window.addEventListener('scroll', () => {
+      // Check if there is an object in the top half of the screen or keep the last item active
+      activeElement = Array.from(elements).find((element) => {
+          if ((getOffsetTop(element) - window.pageYOffset) > 0 && 
+              (getOffsetTop(element) - window.pageYOffset) < window.innerHeight/2) {
+              return element;
+          }
+      }) || activeElement
+
+      elements.forEach(element => {
+          if (element === activeElement ){
+              document.querySelector(`.inner ul li a[href="#${element.getAttribute('id')}"]`).classList.add('active');
+          } else {
+              document.querySelector(`.inner ul li a[href="#${element.getAttribute('id')}"]`).classList.remove('active');
+          }
+      })
+  }, false);
+
+  const main = parseInt(getComputedStyle(document.body).getPropertyValue('--main-width'), 10);
+  const ref = parseInt(getComputedStyle(document.body).getPropertyValue('--ref-width'), 10);
+  const gap = parseInt(getComputedStyle(document.body).getPropertyValue('--gap'), 10);
+
+  function checkRefPosition() {
+      const width = document.body.scrollWidth;
+
+      if (width - main - (ref * 2) - (gap * 4) > 0) {
+          document.getElementById("ref-container").classList.add("wide");
+      } else {
+          document.getElementById("ref-container").classList.remove("wide");
+      }
+  }
+
+  function getOffsetTop(element) {
+      if (!element.getClientRects().length) {
+          return 0;
+      }
+      let rect = element.getBoundingClientRect();
+      let win = element.ownerDocument.defaultView;
+      return rect.top + win.pageYOffset;   
+  }
+</script>

@@ -45,12 +45,12 @@
 
 .post-content h1 {
     margin: 40px auto 32px;
-    font-size: 40px;
+    font-size: 24px;
 }
 
 .post-content h2 {
     margin: 32px auto 24px;
-    font-size: 32px;
+    font-size: 24px;
 }
 
 .post-content h3 {
@@ -455,4 +455,31 @@ h6:hover .anchor {
 
 [dir="rtl"] .paginav .next {
     text-align: left;
+}
+
+.ref {
+    margin: 0 2px 40px 2px;
+    border: 1px solid var(--border);
+    background: var(--entry); 
+    border-radius: var(--radius);
+    padding: 0.4em;
+}
+
+.ref-container.wide {
+    position: absolute;
+    height: 100%;
+    border-left: 1px solid var(--border);
+    right: calc((var(--toc-width) + var(--gap)) * -1);
+    top: calc(var(--gap) * 2);
+    width: var(--toc-width);
+}
+
+.wide .ref {
+    position: sticky;
+    top: var(--gap);
+    border: unset;
+    background: unset;
+    border-radius: unset;
+    width: 100%;
+    margin: 0 2px 40px 2px;
 }

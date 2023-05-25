@@ -5,6 +5,7 @@ draft: false
 math: true
 ShowToc: true
 TocOpen: true
+ShowRef: true
 hamBurgerMenu: true
 ---
 
