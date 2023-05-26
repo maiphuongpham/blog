@@ -51,10 +51,11 @@
 .post-content h2 {
     margin: 32px auto 24px;
     font-size: 24px;
+    border-bottom: 1px solid var(--border);
 }
 
 .post-content h3 {
-    font-size: 24px;
+    font-size: 20px;
 }
 
 .post-content h4 {

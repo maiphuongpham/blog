@@ -19,6 +19,13 @@ menu:
       weight: 30
 
 params:
+    defaultTheme: auto
+    disableThemeToggle: false
+    ShowBreadCrumbs: false
+    ShowPostNavLinks: true
+    ShowShareButtons: true
+    ShareButtons: ['facebook','twitter','linkedin']
+    TocOpen: true
     homeInfoParams:
         Title: Knowing is Growing
         Content: "Learning is an incessant voyage of discovery, \
@@ -30,7 +37,13 @@ params:
         enlightenment, and a profound sense of fulfillment."
     
     socialIcons: 
-        - name: "<platform>"
-          url: "<link>"
-        - name: "<platform 2>"
-          url: "<link2>"
+        - name: linkedin
+          url: https://www.linkedin.com/in/maippham99
+        - name: github
+          url: https://maiphuongpham.github.io
+        - name: googlescholar
+          url: https://scholar.google.com/citations?user=dRXdxPIAAAAJ&hl=en
+        - name: discord
+          url: https://discord.gg/Kg4q9Tv9na
+        - name: instagram
+          url: https://www.instagram.com/maihoamieu
