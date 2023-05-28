@@ -1,8 +1,22 @@
+<!--This is to make a right side bar with optional text display, here I want
+to include some upcoming post ideas.
+
+I added these lines in "layouts/partials/toc.html": 
+  document.getElementById("ref-container").classList.add("wide");
+  document.getElementById("ref-container").classList.remove("wide");
+
+and these lines in "layouts/_default/single.html"
+  {{- if (.Param "ShowRef") }}
+  {{- partial "sidebar.html" . }}
+  {{- end }}
+
+and I add ShowRef = true to the front matter of posts-->
+
 <aside id="ref-container" class="ref-container wide">
   <div class="refs">
       <details {{if (.Param "RefOpen") }} open{{ end }}>
           <summary accesskey="c" title="(Alt + C)">
-              <span class="details"> Hello World! </span>
+              <span class="details"> Upcoming topics: Simplex, Nelder Mead, Genetic Algorithm</span>
           </summary>
         </details>
   </div>
