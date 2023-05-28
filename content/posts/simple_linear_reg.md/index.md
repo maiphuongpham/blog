@@ -1,9 +1,12 @@
 ---
-title: "Linear Regression"
+title: "Simple Linear Regression"
 date: 2023-03-17T15:54:07-08:00
 draft: false
 math: true
+tags: statistics
 ---
+
+Simple Linear Regression is an excellent starting point for learning statistics. I have taken numerous classes that discusses this model, emphasizing its simplicity and ease of implementation. Despite the straightforward nature, Simple Linear Regression is a fundamental technique that every graduate school and quant company would expect, or even assume the candidates have profoundly understood. In this brief overview, I aim to provide a concise explanation of the method, employing a more mathematical and computational approach.
 
 ### Assumptions
 1. Linearity
