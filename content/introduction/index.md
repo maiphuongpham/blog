@@ -12,7 +12,7 @@ tags: [self]
 
 I am a student in Operations Research at Columbia Engineering. As far as I progressed, I've learned that education is my priority. My education spans from Business Administration to Operations Research and Data Science.
 
-As I graduated from Foreign Trade University in Vietnam, I had the opportunity to delve into some programming languages. This experience opened my mind to many research and collaboration opportunities. I've worked hard from that moment on to prepare myself in every way to be qualified for the rigorous challenges that higher education entails, and I also humbly seek share the gift of learning to inspire others on their own paths of discovery and self-improvement.
+As I graduated from Foreign Trade University in Vietnam, I had the opportunity to delve into some programming languages. This experience opened my mind to many research and collaboration opportunities within Operations Research and Financial Engineering. I've worked hard from that moment on to prepare myself in every way to be qualified for the rigorous challenges that higher education entails, and I also humbly seek share the gift of learning to inspire others on their own paths of discovery and self-improvement.
 
 Since embarking on my educational journey, this realization has shaped my perspective: 
 > *"The more I learn, the more I realize how much I don't know" (Albert Einstein)*
