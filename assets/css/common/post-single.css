@@ -315,7 +315,7 @@
 .toc .inner {
     margin: 0 0 0 20px;
     padding: 0px 15px 15px 20px;
-    font-size: 16px;
+    font-size: 14px;
 }
 
 .toc li ul {
@@ -485,4 +485,4 @@ h6:hover .anchor {
     margin: 0 2px 40px 2px;
 }
 
-
+.katex { font-size: 1em !important; } 

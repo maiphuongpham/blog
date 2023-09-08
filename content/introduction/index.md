@@ -31,3 +31,13 @@ Since embarking on my educational journey, this realization has shaped my perspe
 1. "Impact of Institutional Ownership on Earnings Management in Vietnamese Enterprises", thesis, 2021. [pdf](https://www.researchgate.net/publication/348406146_ANH_HUONG_CUA_SO_HUU_TO_CHUC_DEN_HOAT_DONG_QUAN_TRI_LOI_NHUAN_TAI_CAC_DOANH_NGHIEP_VIET_NAM#fullTextFileContent)
 
 > This was my 104-page graduation thesis from Foreign Trade University, written in Vietnamese, specifically focusing on the field of Corporate Finance using statistical models. Under the guidance of Dr. Nguyen, it achieved the second highest grade among more than 300 students in my faculty. The thesis conducted a comprehensive review of previous studies on Earnings Management and Institutional Ownership and then centering on the analysis of panel data using three statistical models: Ordinary Least Squares Model, Fixed Effect Model, and Random Effect Model. The variables examined included leverage, market-to-book ratio, profitability, firm size, growth rate, company's age, market share, and institutional ownership. Earnings management was assessed using discretionary accruals estimated with the contemporary statistical estimation technique proposed by Kоthаri et al (2005).
+
+### Projects
+
+1. P.M. Pham, D. Maniscalco, C. Kenworthy, "Central Bank Sentiment Analysis with Large Language Models", project report & poster, 2023.
+
+> This industrial project was supervised by Prof. Hirsa and Morgan Stanley, which aimed at exploring the capacities of
+LLMs to classify FOMC statements into hawkish, dovish, or neutral, then proposed the most efficient method to achieve 
+this classification at both sentence and document levels. A new dataset (FOMC statements sentiments) and module have 
+been created, leveraging several prompt engineering and parameter-efficient fine-tuning techniques on recently released 
+large language models. Our methods showed a consistently over 90% accuracy over the dataset.
