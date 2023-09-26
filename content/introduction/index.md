@@ -10,11 +10,11 @@ tags: [self]
 ---
 ## Biography
 
-I am a student in Operations Research at Columbia Engineering. As far as I progressed, I've learned that education is my priority. My education spans from Business Administration to Operations Research and Data Science.
+I am a student in Operations Research at Columbia Engineering. As far as I progressed, I've learned that education is my priority. My education stepped from Business Administration to Operations Research and Data Science.
 
-As I graduated from Foreign Trade University in Vietnam, I had the opportunity to delve into some programming languages. This experience opened my mind to many research and collaboration opportunities within Operations Research and Financial Engineering. I've worked hard from that moment on to prepare myself in every way to be qualified for the rigorous challenges that higher education entails, and I also humbly seek share the gift of learning to inspire others on their own paths of discovery and self-improvement.
+As I graduated from Foreign Trade University in Vietnam, besides taking a few graduate entry positions in the industry for two years, fortunately, I had the opportunity to work with the kind-hearted and brilliant professors at the Department of Artificial Intelligence, ThuyLoi University, and delved into the world of engineering. This experience opened my mind to many research and collaboration opportunities within Operations Research and Financial Engineering. I've worked to prepare myself in every way to be qualified for the rigorous challenges that higher education entails, and through this website, I also humbly seek share the gift of learning to inspire others on their own paths of discovery and self-improvement.
 
-Since embarking on my educational journey, this realization has shaped my perspective: 
+Since embarking on my learning journey, this realization has shaped my perspective: 
 > *"The more I learn, the more I realize how much I don't know" (Albert Einstein)*
 
 ## Academic Work
