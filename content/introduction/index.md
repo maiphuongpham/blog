@@ -1,8 +1,8 @@
 ---
 title: "Introduction"
 date: 2023-05-15T15:54:07-08:00
-ShowToc: true
-ShowRef: true
+ShowToc: false
+ShowRef: false
 draft: false
 cover:
     image: intro_photo.jpg
@@ -38,5 +38,3 @@ Since embarking on my educational journey, this realization has shaped my perspe
 
 > This industrial project was supervised by Prof. Hirsa and Morgan Stanley, which aimed at exploring the capacities of LLMs to classify 
 FOMC statements into hawkish, dovish, or neutral, then proposed the most efficient method to achieve this classification at both sentence and document levels. A new dataset (FOMC statements sentiments) and module have been created, leveraging several prompt engineering and parameter-efficient fine-tuning techniques on recently released large language models. Our proposed methods showed a consistently over 90% accuracy over the dataset. The report and poster is not public, however, the modular codes are available on [github](https://github.com/maiphuongpham/FOMCSentiments).
-
-2. 
