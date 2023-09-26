@@ -1,7 +1,7 @@
 ---
 title: International Parity
 date: 2023-03-22T15:54:07-08:00
-draft: false
+draft: true
 math: true
 ---
 International parity is a framework for developing a view about futre exchange rate movements. Parity Relations the inter-relatioships that jointly determine long-run movements in foreign exchange rates, interest rates and inflation. Parity conditions show how expected inflation differentials ($\pi$), interest rate differentials ($i$), forward foreign exchange (Fx) rates ($F$), current spot Fx rates ($S$), and expected future spot foreign exchange rates would be linked in an ideal world ($S^{e}$).

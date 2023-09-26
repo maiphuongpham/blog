@@ -1,7 +1,7 @@
 ---
 title: "Theories of Growth"
 date: 2023-03-29T15:54:07-08:00
-draft: False
+draft: true
 math: True
 ---
 # Classical Growth Theory

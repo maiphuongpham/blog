@@ -1,7 +1,7 @@
 ---
 title: "Linear Regression: A Deep Dive into the Mathematical Framework"
 date: 2023-05-27T15:54:07-08:00
-draft: false
+draft: true
 math: true
 ShowToc: true
 ShowRef: true
