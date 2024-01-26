@@ -45,7 +45,7 @@ params:
       # imageHeight: 120 # custom size
       buttons:
         - name: Introduction
-          url: https://maiphuongpham.github.io/blog/introduction/
+          url: introduction
     
     socialIcons: 
         - name: linkedin
