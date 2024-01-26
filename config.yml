@@ -26,15 +26,26 @@ params:
     ShowShareButtons: true
     ShareButtons: ['facebook','twitter','linkedin']
     TocOpen: true
-    homeInfoParams:
-        Title: Knowing is Growing
-        Content: "Learning is an incessant voyage of discovery, \
-        which demands prodigious time and a rigorous endeavor. \
-        This blog serves as a repository to perpetuate and nurture \
-        my intellectual prowess while graciously sharing the delight \
-        of acquiring knowledge with fellow seekers of wisdom. \
-        May your time here be filled with inspiration, \
-        enlightenment, and a profound sense of fulfillment."
+    # homeInfoParams:
+    #     Title: Knowing is Growing
+    #     Content: "Learning is an incessant voyage of discovery, \
+    #     which demands prodigious time and a rigorous endeavor. \
+    #     This blog serves as a repository to perpetuate and nurture \
+    #     my intellectual prowess while graciously sharing the delight \
+    #     of acquiring knowledge with fellow seekers of wisdom. \
+    #     May your time here be filled with inspiration, \
+    #     enlightenment, and a profound sense of fulfillment."
+    profileMode:
+      enabled: true
+      title: MAI PHAM # optional default will be site title
+      subtitle: MS Candidate in Operations Research
+      # imageUrl: "<image link>" # optional
+      # imageTitle: "<title of image as alt>" # optional
+      # imageWidth: 120 # custom size
+      # imageHeight: 120 # custom size
+      buttons:
+        - name: Introduction
+          url: https://maiphuongpham.github.io/blog/introduction/
     
     socialIcons: 
         - name: linkedin
