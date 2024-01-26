@@ -34,6 +34,15 @@ Since embarking on my learning journey, this realization has shaped my perspecti
 
 ### Projects
 
-1. "Resource Allocation on Live-Streaming Video Platforms", class project, 2023. [pdf](content/introduction/ORCS_E4527_Project_Report.pdf)
+1. "A QPLEX Model for Electric Vehicle Battery Swapping Services", 2023. [slides](https://drive.google.com/file/d/1oEXUlFG2WP7Hmk_Pbbwp61Y4jS6ggEwO/view?usp=sharing)
+
+> According to Wei et al.(2023), there is a trend of “swap-locally, charge-centrally” ideas in the field of battery swapping. However, transporting them in a scale of houndrands daily would be a logistical challenge. We propose a new framework of combining existing battery swap stations and the idea of “charge-centrally”. In our framework, instead of totally relying on the charging station, the swap station will have the same capability as existing swap stations in terms of charging the battery locally, however, they can order a truck of fully charged batteries from the centralized charging station if their inventory is low. In this way, we hope to combine the advantages of both systems. This project leverages QPLEX methodology (Dieker & Hackman) - a nonstationary, nonparametric, non-Markovian modeling and analysis paradigm for stochastic networks.
+
+2. "Resource Allocation on Live-Streaming Video Platforms", 2023. [pdf](https://drive.google.com/file/d/1YIa5EnmoUoBnljf9RGfezTwGEkX0EdGr/view?usp=sharing)
 
 > This project addresses the challenge of optimizing resource allocation on live-streaming video platforms. The focus is on solving the problem of efficiently distributing server resources amidst the dynamically changing demand of users, ensuring both high-quality streaming experience and cost-effectiveness. It proposed an approach that combined Machine Learning-Deep Q-Learning (ML-DQL) as in RL-OPRA (Baccour et al, 2020), with extensions in Double Deep Q-Network (Double DQN) and and Count-based Exploration DQN. The findings demonstrate significant improvements in resource utilization compared to the greedy benchmark, offering valuable insights for managing complex, user-driven live-streaming environments.
+
+3. "Central Bank Sentiment Analysis with Large Language Models", 2023. [pdf](https://drive.google.com/file/d/1A3bdgLPMtC_h3gmdj3zoFN5lLBZ0P1xf/view?usp=sharing)
+
+> Federal Open Market Committee (FOMC) statements are vital indicators of changes in monetary policy. The classification of FOMC sentiments into hawkish, dovish, or neutral has been approached through various methods, including unsupervised and dictionary-based models, and machine learning models. Recently developed large language models (LLMs) have showcased superior proficiency across various Natural Language Processing (NLP) tasks. These extend beyond text generation - such as chat interactions, text summarization, question answering, problem solving - to text classification, notably sentiment analysis. This project aimed at exploring the capacities of LLMs to classify FOMC statements into hawkish, dovish, or neutral, then proposed the most efficient method to achieve this classification at both sentence and document levels.
+
